@@ -156,7 +156,7 @@ $html = '
                     </tr>
                     <tr>
                     <td><p><strong>Examination Roll:</strong> ' . $exam_roll . '</p></td>
-                    <td class="center" id="sign"> <img src="sign.jpeg" alt="JU Logo" width="100" height="50" class="sign"></td>
+                    <td class="center" id="sign"> <img src="sign.png" alt="JU Logo" width="100" height="50" class="sign"></td>
                     </tr>
                     <tr>
                     <td><p><strong>Class Roll:</strong> ' . $class_roll . '</p></td>
