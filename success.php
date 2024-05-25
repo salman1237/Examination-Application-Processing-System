@@ -147,7 +147,7 @@
     </svg>
     <h1>Payment Successful!</h1>
     <p>Thank you for your payment. Your transaction was successful.</p>
-    <a href="student-dashboard.php" class="button">Go to Homepage</a>
+    <a href="student-dashboard.php" class="button">Go to your dashboard</a>
   </div>
 </body>
 </html>

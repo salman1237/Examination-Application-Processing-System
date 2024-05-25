@@ -52,15 +52,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: black;
-        }
-
-        .container {
-            margin-top: 50px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .card {
+            background-color: #e3f2fd;
             padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 25px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+
+        .text-center {
+            font-size: 14px;
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .card-header {
+            background-color: #e3f2fd;
+            color: black;
+            border-bottom: 0;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
+
+        .card-header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-header h2 {
+            margin-top: 1rem;
+            font-size: 30px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -69,7 +125,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="card">
-                    <h2 class="text-center">Student Signup</h2>
+                <div class="card-header text-center">
+            <?php
+            echo "<img src=\"logo-ju.png\" alt=\"Image\">";
+            ?>
+            <h2>Signup</h2>
+        </div>
                     <form action="student-signup.php" method="POST" enctype="multipart/form-data">
                         <!-- Form fields -->
                         <div class="form-group">

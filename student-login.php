@@ -9,26 +9,23 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: rgb(2, 0, 36);
-            background: -moz-radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-            background: -webkit-radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-            background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+            background-image: linear-gradient(to right top, #4b607f, #4c8397, #63a4a3, #93c2a8, #cfddb1);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         .card {
             width: 100%;
-            max-width: 400px;
-            border: 2px solid #dee2e6;
-            border-radius: 1 rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
+            max-width: 350px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: #e3f2fd;
+            border-radius: 0.75rem;
             transition: transform 0.3s ease-in-out;
+            padding: 1rem;
         }
 
         .card:hover {
@@ -40,20 +37,28 @@
             color: black;
             border-bottom: 0;
             position: relative;
-            padding: 1rem 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem 0.75rem 0 0;
         }
 
         .card-header img {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-header h2 {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
         .btn-primary {
             background-color: #007bff;
             border-color: #007bff;
+            border-radius: 0.5rem;
         }
 
         .btn-primary:hover {
@@ -62,11 +67,17 @@
         }
 
         .form-group label {
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .form-control {
-            border-radius: 0.25rem;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .card-footer {
+            padding-top: 0.5rem;
+            background-color: #e3f2fd;
         }
     </style>
 </head>
@@ -83,13 +94,11 @@
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="form-group">
                     <label for="registration_no">Registration No</label>
-                    <input type="text" class="form-control" id="registration_no" placeholder="Enter registration number"
-                        name="registration_no" required>
+                    <input type="text" class="form-control" id="registration_no" placeholder="Enter registration number" name="registration_no" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password"
-                        name="password" required>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>

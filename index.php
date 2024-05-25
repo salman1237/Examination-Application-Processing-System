@@ -93,9 +93,9 @@
 </head>
 <body>
     <!-- Floating Announcement Section -->
-    <div class="alert alert-danger floating-announcement" role="alert">
+    <!-- <div class="alert alert-danger floating-announcement" role="alert">
         <strong>Important:</strong> The deadline for exam fee payment is May 30, 2024. Please ensure you complete your payment before the deadline to avoid late fees.
-    </div>
+    </div> -->
 
     <div class="container">
         <div class="row justify-content-center">
