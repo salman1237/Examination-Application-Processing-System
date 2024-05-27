@@ -88,7 +88,7 @@ $student = mysqli_fetch_assoc($result);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#profile">Student Profile</a>
+                    <a class="nav-link" href="#profile">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#new-application">Application Form</a>

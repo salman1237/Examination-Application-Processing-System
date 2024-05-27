@@ -26,7 +26,7 @@
             border: none;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #ffffff, #e2e6ea);
+            background-color: #e3f2fd;
         }
         .card-title {
             font-family: 'Montserrat', sans-serif;
@@ -34,6 +34,12 @@
             font-weight: 600;
             margin-bottom: 20px;
             color: #343a40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-title img {
+            margin-right: 10px;
         }
         .card-text {
             font-size: 1.2rem;
@@ -102,7 +108,10 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title">Exam Fee Payment Portal</h2>
+                        <h2 class="card-title">
+                            <img src="logo-ju.png" alt="JU Logo" width="80" height="80">
+                            Examination Application Processing System
+                        </h2>
                         <p class="card-text">Please select your login option:</p>
                         <!-- Student Login Button -->
                         <a href="student-login.php" class="btn btn-primary btn-block mb-3"><i class="fas fa-user"></i> Student Login</a>
