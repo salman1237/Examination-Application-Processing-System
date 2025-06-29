@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validate and sanitize inputs
     $name = mysqli_real_escape_string($con, $_POST['name']);
-    $exam_roll = mysqli_real_escape_string($con, $_POST['exam_roll']);
     $father_name = mysqli_real_escape_string($con, $_POST['father_name']);
     $mother_name = mysqli_real_escape_string($con, $_POST['mother_name']);
     $session = mysqli_real_escape_string($con, $_POST['session']);
@@ -20,18 +19,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
+    $exam_roll = mysqli_real_escape_string($con, $_POST['exam_roll']);
+    $HSC_year = mysqli_real_escape_string($con, $_POST['HSC_year']);
+    $HSC_GPA = mysqli_real_escape_string($con, $_POST['HSC_GPA']);
+    $HSC_group = mysqli_real_escape_string($con, $_POST['HSC_group']);
+    $HSC_board = mysqli_real_escape_string($con, $_POST['HSC_board']);
+    $SSC_year = mysqli_real_escape_string($con, $_POST['SSC_year']);
+    $SSC_GPA = mysqli_real_escape_string($con, $_POST['SSC_GPA']);
+    $SSC_group = mysqli_real_escape_string($con, $_POST['SSC_group']);
+    $SSC_board = mysqli_real_escape_string($con, $_POST['SSC_board']);
+    $permanent_address = mysqli_real_escape_string($con, $_POST['permanent_address']);
+
+    // Handle image upload
     $file_name = $_FILES['profile_pic']['name'];
-    $tmpname= $_FILES['profile_pic']['tmp_name'];
-    $folder='images/'.$file_name;
+    $tmpname = $_FILES['profile_pic']['tmp_name'];
+    $folder = 'images/' . $file_name;
     move_uploaded_file($tmpname, $folder);
+
     // Check if user already exists
     $checkQuery = "SELECT * FROM student WHERE registration_no='$registration_no'";
     $checkResult = mysqli_query($con, $checkQuery);
     if ($checkResult && mysqli_num_rows($checkResult) > 0) {
         $userExists = true;
     } else {
-        // Insert new user
-        $insertQuery = "insert into student (name, father_name, mother_name, session, id, registration_no, hall, department, dob, sex, email, phone, password,image,exam_roll) VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall', '$department', '$dob', '$sex', '$email', '$phone', '$password','$file_name',$exam_roll)";
+        // Insert new user into the student table
+        $insertQuery = "INSERT INTO student (name, father_name, mother_name, session, id, registration_no, hall, department, dob, sex, email, phone, password, image, exam_roll, permanent_address, HSC_year, HSC_GPA, HSC_group, HSC_board, SSC_year, SSC_GPA, SSC_group, SSC_board)
+                        VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall', '$department', '$dob', '$sex', '$email', '$phone', '$password', '$file_name', '$exam_roll', '$permanent_address', '$HSC_year', '$HSC_GPA', '$HSC_group', '$HSC_board', '$SSC_year', '$SSC_GPA', '$SSC_group', '$SSC_board')";
         $insertResult = mysqli_query($con, $insertQuery);
         if ($insertResult) {
             $success = true;
@@ -43,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,16 +67,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body {
             background-color: #f8f9fa;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
 
         .card {
             background-color: #e3f2fd;
             padding: 20px;
-            border-radius: 15px;
+            
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border: none;
         }
@@ -82,9 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: bold;
         }
 
-        .form-control {
-            border-radius: 10px;
-        }
 
         .alert {
             border-radius: 10px;
@@ -93,9 +107,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .text-center {
             font-size: 14px;
         }
+
         .card-body {
             padding: 2rem;
         }
+
         .card-header {
             background-color: #e3f2fd;
             color: black;
@@ -120,94 +136,88 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
                 <div class="card">
-                <div class="card-header text-center">
-            <?php
-            echo "<img src=\"logo-ju.png\" alt=\"Image\">";
-            ?>
-            <h2>Signup</h2>
-        </div>
+                    <div class="card-header text-center">
+                        <?php echo "<img src=\"logo-ju.png\" alt=\"Image\">"; ?>
+                        <h2>Signup</h2>
+                    </div>
                     <form action="student-signup.php" method="POST" enctype="multipart/form-data">
-                        <!-- Form fields -->
+                        <!-- Personal Information -->
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
-                        <!-- Other form fields go here -->
-                        <!-- Father's Name -->
                         <div class="form-group">
                             <label for="father_name">Father's Name</label>
                             <input type="text" class="form-control" id="father_name" name="father_name" required>
                         </div>
-                        <!-- Mother's Name -->
                         <div class="form-group">
                             <label for="mother_name">Mother's Name</label>
                             <input type="text" class="form-control" id="mother_name" name="mother_name" required>
                         </div>
-                        <!-- Session -->
+                        
+                        <!-- University Information -->
                         <div class="form-group">
                             <label for="session">Session</label>
                             <select class="form-control" id="session" name="session" required>
-                                <option value="2023-24">2023-24</option>
-                                <option value="2022-23">2022-23</option>
-                                <option value="2021-22">2021-22</option>
-                                <option value="2020-21">2020-21</option>
-                                <option value="2019-20">2019-20</option>
-                                <option value="2018-19">2018-19</option>
+                                <?php
+                                $currentYear = date('Y');
+                                for ($i = $currentYear; $i >= 2010; $i--) {
+                                    $nextYear = $i + 1;
+                                    echo "<option value=\"$i-" . substr($nextYear, 2, 2) . "\">$i-" . substr($nextYear, 2, 2) . "</option>";
+                                }
+                                ?>
                             </select>
                         </div>
-                        <!-- Student ID -->
                         <div class="form-group">
-                            <label for="student_id">Student ID</label>
-                            <input type="text" class="form-control" id="student_id" name="id" required>
+                            <label for="id">Student ID</label>
+                            <input type="text" class="form-control" id="id" name="id" required>
                         </div>
-                        <!-- Registration No -->
                         <div class="form-group">
                             <label for="registration_no">Registration No</label>
-                            <input type="text" class="form-control" id="registration_no" name="registration_no"
-                                required>
+                            <input type="text" class="form-control" id="registration_no" name="registration_no" required>
                         </div>
-                        <!-- exam roll -->
                         <div class="form-group">
-                            <label for="student_id">Exam Roll</label>
+                            <label for="exam_roll">Exam Roll</label>
                             <input type="text" class="form-control" id="exam_roll" name="exam_roll" required>
                         </div>
-                        <!-- Hall -->
                         <div class="form-group">
                             <label for="hall">Hall</label>
                             <select class="form-control" id="hall" name="hall" required>
-                                <option value="mowlana bhashani hall">mowlana bhashani hall</option>
-                                <option value="sheikh rassel hall">sheikh rassel hall</option>
-                                <option value="shaheed tazudiin ahmed hall">shaheed tazudiin ahmed hall</option>
-                                <option value="fazilatunnesa hall">fazilatunnesa hall</option>
-                                <option value="prtilata hall">prtilata hall</option>
-                                <option value="sheikh hasina hall">sheikh hasina hall</option>
-                                <option value="khaleda zia hall">khaleda zia hall</option>
+                                <option value="mowlana bhashani hall">Mowlana Bhashani Hall</option>
+                                <option value="sheikh rassel hall">Sheikh Russel Hall</option>
+                                <option value="shaheed tazudiin ahmed hall">Shaheed Tazuddin Ahmed Hall</option>
+                                <option value="fazilatunnesa hall">Fazilatunnesa Hall</option>
+                                <option value="prtilata hall">Pritilata Hall</option>
+                                <option value="sheikh hasina hall">Sheikh Hasina Hall</option>
+                                <option value="khaleda zia hall">Khaleda Zia Hall</option>
                             </select>
                         </div>
-                        <!-- Department -->
                         <div class="form-group">
                             <label for="department">Department</label>
                             <select class="form-control" id="department" name="department" required>
-                                <option value="iit">iit</option>
-                                <option value="cse">cse</option>
-                                <option value="pharmecy">pharmecy</option>
-                                <option value="mathematics">mathematics</option>
-                                <option value="statistics">statistics</option>
-                                <option value="physics">physics</option>
-                                <option value="chemistry">chemistry</option>
+                                <option value="iit">IIT (Institute of Information Technology)</option>
+                                <option value="cse">CSE (Computer Science & Engineering)</option>
+                                <option value="pharmecy">Pharmacy</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="statistics">Statistics</option>
+                                <option value="physics">Physics</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="english">English</option>
+                                <option value="economics">Economics</option>
                             </select>
                         </div>
-                        <!-- Date of Birth -->
+                        
+                        <!-- Personal Details -->
                         <div class="form-group">
                             <label for="dob">Date of Birth</label>
                             <input type="date" class="form-control" id="dob" name="dob" required>
                         </div>
-                        <!-- Sex -->
                         <div class="form-group">
                             <label for="sex">Gender</label>
                             <select class="form-control" id="sex" name="sex" required>
@@ -216,28 +226,109 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        <!-- Phone -->
                         <div class="form-group">
                             <label for="phone">Phone</label>
                             <input type="tel" class="form-control" id="phone" name="phone" required>
                         </div>
-                        <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <!-- Image Upload -->
+                        <div class="form-group">
+                            <label for="permanent_address">Permanent Address</label>
+                            <input type="text" class="form-control" id="permanent_address" name="permanent_address" required>
+                        </div>
+                        
+                        <!-- HSC Information -->
+                        <div class="form-group">
+                            <label for="HSC_year">HSC Year</label>
+                            <select class="form-control" id="HSC_year" name="HSC_year" required>
+                                <?php
+                                for ($year = date('Y'); $year >= 2000; $year--) {
+                                    echo "<option value=\"$year\">$year</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="HSC_GPA">HSC GPA</label>
+                            <input type="number" class="form-control" id="HSC_GPA" name="HSC_GPA" step="0.01" min="0" max="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="HSC_group">HSC Group</label>
+                            <select class="form-control" id="HSC_group" name="HSC_group" required>
+                                <option value="science">Science</option>
+                                <option value="commerce">Commerce</option>
+                                <option value="arts">Arts</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="HSC_board">HSC Board</label>
+                            <select class="form-control" id="HSC_board" name="HSC_board" required>
+                                <option value="dhaka">Dhaka</option>
+                                <option value="rajshahi">Rajshahi</option>
+                                <option value="chittagong">Chittagong</option>
+                                <option value="khulna">Khulna</option>
+                                <option value="barisal">Barisal</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="dinajpur">Dinajpur</option>
+                                <option value="madrasa">Madrasa</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        
+                        <!-- SSC Information -->
+                        <div class="form-group">
+                            <label for="SSC_year">SSC Year</label>
+                            <select class="form-control" id="SSC_year" name="SSC_year" required>
+                                <?php
+                                for ($year = date('Y'); $year >= 2000; $year--) {
+                                    echo "<option value=\"$year\">$year</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="SSC_GPA">SSC GPA</label>
+                            <input type="number" class="form-control" id="SSC_GPA" name="SSC_GPA" step="0.01" min="0" max="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="SSC_group">SSC Group</label>
+                            <select class="form-control" id="SSC_group" name="SSC_group" required>
+                                <option value="science">Science</option>
+                                <option value="commerce">Commerce</option>
+                                <option value="arts">Arts</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="SSC_board">SSC Board</label>
+                            <select class="form-control" id="SSC_board" name="SSC_board" required>
+                                <option value="dhaka">Dhaka</option>
+                                <option value="rajshahi">Rajshahi</option>
+                                <option value="chittagong">Chittagong</option>
+                                <option value="khulna">Khulna</option>
+                                <option value="barisal">Barisal</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="dinajpur">Dinajpur</option>
+                                <option value="madrasa">Madrasa</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Profile Picture -->
                         <div class="form-group">
                             <label for="profile_pic">Profile Picture</label>
                             <input type="file" class="form-control-file" id="profile_pic" name="profile_pic" accept="image/*" required>
                         </div>
-                        <!-- Submit Button -->
+                        
                         <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+
                         <!-- Feedback messages -->
                         <?php if ($userExists): ?>
                             <div class="alert alert-danger mt-3" role="alert">
@@ -245,16 +336,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                         <?php elseif ($success): ?>
                             <div class="alert alert-success mt-3" role="alert">
-                                Data inserted successfully.
+                                Signed up successfully
                             </div>
                         <?php endif; ?>
-                        <!-- Have an account? Click here to login -->
-                        <p class="text-center">Already have an account? <a href="student-login.php">Click here to
-                                login</a></p>
+
+                        <p class="text-center">Already have an account? <a href="student-login.php">Click here to login</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

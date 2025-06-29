@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('connect.php');
+include('connect.php');
 $registration_no = $_SESSION['registration_no'];
 $sql = "SELECT * FROM student WHERE registration_no=$registration_no";
 $result = mysqli_query($con, $sql);
@@ -38,7 +38,9 @@ $student = mysqli_fetch_assoc($result);
             border: 4px solid #007bff;
             padding: 5px;
         }
-        .table th, .table td {
+
+        .table th,
+        .table td {
             vertical-align: middle;
             text-align: center;
         }
@@ -52,6 +54,7 @@ $student = mysqli_fetch_assoc($result);
             font-size: 14px;
             font-weight: 500;
         }
+
         .hidden {
             display: none;
         }
@@ -69,8 +72,86 @@ $student = mysqli_fetch_assoc($result);
         }
 
         .navbar-brand img {
-            height: 40px; /* Adjust the height as needed */
-            margin-right: 10px; /* Space between logo and text */
+            height: 40px;
+            /* Adjust the height as needed */
+            margin-right: 10px;
+            /* Space between logo and text */
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+            text-align: left;
+            /* Align left for better readability */
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .table td {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .image-container img {
+            max-width: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #007bff;
+            padding: 5px;
+        }
+
+        .card-header h2 {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .statusField {
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* For "Approved" status */
+        .statusField.approved {
+            color: green;
+            background-color: #d4edda;
+            /* Light green background */
+        }
+
+        /* For "Declined" status */
+        .statusField.declined {
+            color: red;
+            background-color: #f8d7da;
+            /* Light red background */
+        }
+
+        /* For "Pending" status */
+        .statusField.pending {
+            color: black;
+            background-color: #fff3cd;
+            /* Light yellow background */
+        }
+
+        /* For "Paid" status */
+        .statusField.paid {
+            color: blue;
+            background-color: #cce5ff;
+            /* Light blue background */
         }
     </style>
 </head>
@@ -105,37 +186,104 @@ $student = mysqli_fetch_assoc($result);
 
     <div class="container">
         <div id="profile" class="section">
-            <div class="card">
-                <div class="card-header">
+            <div class="card mx-auto" style="max-width: 900px;">
+                <div class="card-header text-center">
                     <h2>Student Profile</h2>
                 </div>
                 <div class="card-body">
-                    <div class="image-container">
-                        <img src="images/<?php echo $student['image']?>" alt="Student Image">
+                    <div class="image-container text-center">
+                        <img src="images/<?php echo $student['image']; ?>" alt="Student Image"
+                            class="img-fluid rounded-circle" style="max-width: 150px;">
                     </div>
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Name</th>
-                                <th>Hall</th>
-                                <th>Session</th>
-                                <th>Id</th>
-                                <th>Registration No</th>
-                                <th>Department</th>
-                                <th>Date of Birth</th>
-                                <th>Phone</th>
-                            </tr>
-                        </thead>
+                    <table class="table table-bordered table-striped">
                         <tbody>
                             <tr>
+                                <th>Name</th>
                                 <td><?php echo $student['name']; ?></td>
-                                <td><?php echo $student['hall']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Father's Name</th>
+                                <td><?php echo $student['father_name']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Mother's Name</th>
+                                <td><?php echo $student['mother_name']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Session</th>
                                 <td><?php echo $student['session']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Student ID</th>
                                 <td><?php echo $student['id']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Exam Roll</th>
+                                <td><?php echo $student['exam_roll']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Registration No</th>
                                 <td><?php echo $student['registration_no']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Hall</th>
+                                <td><?php echo $student['hall']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Department</th>
                                 <td><?php echo $student['department']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Date of Birth</th>
                                 <td><?php echo $student['dob']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Gender</th>
+                                <td><?php echo $student['sex']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><?php echo $student['email']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
                                 <td><?php echo $student['phone']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Permanent Address</th>
+                                <td><?php echo $student['permanent_address']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>HSC Year</th>
+                                <td><?php echo $student['HSC_year']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>HSC GPA</th>
+                                <td><?php echo $student['HSC_GPA']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>HSC Group</th>
+                                <td><?php echo $student['HSC_group']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>HSC Board</th>
+                                <td><?php echo $student['HSC_board']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>SSC Year</th>
+                                <td><?php echo $student['SSC_year']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>SSC GPA</th>
+                                <td><?php echo $student['SSC_GPA']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>SSC Group</th>
+                                <td><?php echo $student['SSC_group']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>SSC Board</th>
+                                <td><?php echo $student['SSC_board']; ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -143,14 +291,16 @@ $student = mysqli_fetch_assoc($result);
             </div>
         </div>
 
+
         <div id="new-application" class="section">
-            <div class="card">
-                <div class="card-header">
+            <div class="card mx-auto" style="max-width: 900px;">
+                <div class="card-header text-center">
                     <h2>New Application Form</h2>
                 </div>
                 <div class="card-body">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <div class="form-row">
+                            <!-- First Row: Year and Semester -->
                             <div class="form-group col-md-6">
                                 <label for="year">Year</label>
                                 <select class="form-control" id="year" name="year" required>
@@ -168,26 +318,44 @@ $student = mysqli_fetch_assoc($result);
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-row">
+                            <?php
+                            $fields = [
+                                'student_fee' => 'ছাত্র বেতন',
+                                'hall_rent' => 'হল সীট ভাড়া',
+                                'admission_fee' => 'ভর্তি/পুনঃ ভতি ফিস',
+                                'late_admission_fee' => 'বিলম্বে ভর্তি ফিস',
+                                'library_deposit' => 'গ্রন্থাগার/গবেষণা জামানত',
+                                'students_council' => 'ছাত্র সংসদ চাঁদা',
+                                'sports_fee' => 'ক্রীড়া চাঁদা',
+                                'hall_students_council' => 'হল ছাত্র সংসদ',
+                                'hall_sports_fee' => 'হল ছাত্র ক্রীড়া ফি',
+                                'common_room_fee' => 'কমনরুম ফি',
+                                'session_charge' => 'সেশন চার্জ',
+                                'welfare_fund' => 'ছাত্র কল্যাণ তহবিল',
+                                'registration_fee' => 'রেজিস্ট্রেশন ফি',
+                                'hall_deposit' => 'হল জামানতের টাকা',
+                                'utensil_fee' => 'বাসনপত্র ফি',
+                                'contingency_fee' => 'পরিসংখ্যান কন্টিনজেন্সী',
+                                'health_exam_fee' => 'সাময়িক পত্র/স্বাস্থ্য পরীক্ষা ফি',
+                                'scout_fee' => 'রোভার স্কাউট/পরিচয় পত্র ফি',
+                                'exam_fee' => 'পরীক্ষার ফি',
+                                'other_fee' => 'অন্যান্য/জরিমানা',
+                                'event_fee' => 'অনুষ্ঠান ফি',
+                            ];
+
+                            // Loop through the fields and add them to the form
+                            foreach ($fields as $field => $label) {
+                                echo '
                             <div class="form-group col-md-6">
-                                <label for="student_fee">Student Fee</label>
-                                <input type="text" class="form-control" id="student_fee" name="student_fee" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="exam_fee">Exam Fee</label>
-                                <input type="text" class="form-control" id="exam_fee" name="exam_fee" required>
-                            </div>
+                                <label for="' . $field . '">' . $label . '</label>
+                                <input type="number" class="form-control" id="' . $field . '" name="' . $field . '" value="0" required>
+                            </div>';
+                            }
+                            ?>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="hall_fee">Hall Fee</label>
-                                <input type="text" class="form-control" id="hall_fee" name="hall_fee" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="others_fee">Others Fee</label>
-                                <input type="text" class="form-control" id="others_fee" name="others_fee" required>
-                            </div>
-                        </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -196,39 +364,141 @@ $student = mysqli_fetch_assoc($result);
 
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Get the form data
             $year = $_POST['year'];
             $semester = $_POST['semester'];
-            $student_fee = $_POST['student_fee'];
-            $exam_fee = $_POST['exam_fee'];
-            $hall_fee = $_POST['hall_fee'];
-            $others_fee = $_POST['others_fee'];
-            $to_pay = $student_fee + $exam_fee + $hall_fee + $others_fee;
-            $hall_name = $student['hall'];
-            $department_name = $student['department'];
-            $exam = $year . " year " . $semester . " semester";
-            $registration_no = $student['registration_no'];
-            $sql2 = "INSERT INTO department_approval (registration_no, department_name, exam, to_pay) VALUES ('$registration_no','$department_name','$exam',$to_pay)";
-            $result2 = mysqli_query($con, $sql2);
-            if ($result2) {
-                echo '<div class="alert alert-success" role="alert">
-                Request successfully sent to department
-                </div>';
+
+            // Default all fee values to 0
+            $student_fee = $_POST['student_fee'] ?: 0;
+            $hall_rent = $_POST['hall_rent'] ?: 0;
+            $admission_fee = $_POST['admission_fee'] ?: 0;
+            $late_admission_fee = $_POST['late_admission_fee'] ?: 0;
+            $library_deposit = $_POST['library_deposit'] ?: 0;
+            $students_council = $_POST['students_council'] ?: 0;
+            $sports_fee = $_POST['sports_fee'] ?: 0;
+            $hall_students_council = $_POST['hall_students_council'] ?: 0;
+            $hall_sports_fee = $_POST['hall_sports_fee'] ?: 0;
+            $common_room_fee = $_POST['common_room_fee'] ?: 0;
+            $session_charge = $_POST['session_charge'] ?: 0;
+            $welfare_fund = $_POST['welfare_fund'] ?: 0;
+            $registration_fee = $_POST['registration_fee'] ?: 0;
+            $hall_deposit = $_POST['hall_deposit'] ?: 0;
+            $utensil_fee = $_POST['utensil_fee'] ?: 0;
+            $contingency_fee = $_POST['contingency_fee'] ?: 0;
+            $health_exam_fee = $_POST['health_exam_fee'] ?: 0;
+            $scout_fee = $_POST['scout_fee'] ?: 0;
+            $exam_fee = $_POST['exam_fee'] ?: 0;
+            $other_fee = $_POST['other_fee'] ?: 0;
+            $event_fee = $_POST['event_fee'] ?: 0;
+
+            // Validate inputs
+            $error_messages = [];
+            $max_int = PHP_INT_MAX;
+
+            // Helper function for validation
+            function validate_input($input)
+            {
+                global $max_int;
+                // Check if input is numeric, non-negative, and within the integer max range
+                if (!is_numeric($input)) {
+                    return 'Please enter a valid number.';
+                }
+                if ($input < 0) {
+                    return 'Value cannot be negative.';
+                }
+                if ($input > $max_int) {
+                    return 'Value exceeds maximum allowed limit.';
+                }
+                return null;
+            }
+
+            // Validate all fee inputs
+            $error_messages['student_fee'] = validate_input($student_fee);
+            $error_messages['hall_rent'] = validate_input($hall_rent);
+            $error_messages['admission_fee'] = validate_input($admission_fee);
+            $error_messages['late_admission_fee'] = validate_input($late_admission_fee);
+            $error_messages['library_deposit'] = validate_input($library_deposit);
+            $error_messages['students_council'] = validate_input($students_council);
+            $error_messages['sports_fee'] = validate_input($sports_fee);
+            $error_messages['hall_students_council'] = validate_input($hall_students_council);
+            $error_messages['hall_sports_fee'] = validate_input($hall_sports_fee);
+            $error_messages['common_room_fee'] = validate_input($common_room_fee);
+            $error_messages['session_charge'] = validate_input($session_charge);
+            $error_messages['welfare_fund'] = validate_input($welfare_fund);
+            $error_messages['registration_fee'] = validate_input($registration_fee);
+            $error_messages['hall_deposit'] = validate_input($hall_deposit);
+            $error_messages['utensil_fee'] = validate_input($utensil_fee);
+            $error_messages['contingency_fee'] = validate_input($contingency_fee);
+            $error_messages['health_exam_fee'] = validate_input($health_exam_fee);
+            $error_messages['scout_fee'] = validate_input($scout_fee);
+            $error_messages['exam_fee'] = validate_input($exam_fee);
+            $error_messages['other_fee'] = validate_input($other_fee);
+            $error_messages['event_fee'] = validate_input($event_fee);
+
+            // If there are errors, do not process further
+            if (array_filter($error_messages)) {
+                foreach ($error_messages as $field => $message) {
+                    if ($message) {
+                        echo "<div class='alert alert-danger'>$field: $message</div>";
+                    }
+                }
+            } else {
+                // Calculate total to pay
+                $to_pay = $student_fee + $hall_rent + $admission_fee + $late_admission_fee + $library_deposit + $students_council + $sports_fee + $hall_students_council + $hall_sports_fee + $common_room_fee + $session_charge + $welfare_fund + $registration_fee + $hall_deposit + $utensil_fee + $contingency_fee + $health_exam_fee + $scout_fee + $exam_fee + $other_fee + $event_fee;
+                // Check if $to_pay is greater than 0 before inserting
+                if ($to_pay > 0) {
+                    // Insert into applications table
+                    $hall_name = $student['hall'];
+                    $department_name = $student['department'];
+                    $exam = $year . " year " . $semester . " semester";
+                    $sql2 = "INSERT INTO applications 
+            (name, registration_no, department_name, hall_name, exam, total_due, student_fee, hall_rent, admission_fee, late_admission_fee, library_deposit, students_council, sports_fee, hall_students_council, hall_sports_fee, common_room_fee, session_charge, welfare_fund, registration_fee, hall_deposit, utensil_fee, contingency_fee, health_exam_fee, scout_fee, exam_fee, other_fee, event_fee)
+          VALUES 
+            ('" . $student['name'] . "', 
+            '" . $student['registration_no'] . "', 
+            '" . $department_name . "', 
+            '" . $hall_name . "', 
+            '" . $exam . "',
+            $to_pay, 
+            $student_fee, 
+            $hall_rent, 
+            $admission_fee, 
+            $late_admission_fee, 
+            $library_deposit, 
+            $students_council, 
+            $sports_fee, 
+            $hall_students_council, 
+            $hall_sports_fee, 
+            $common_room_fee, 
+            $session_charge, 
+            $welfare_fund, 
+            $registration_fee, 
+            $hall_deposit, 
+            $utensil_fee, 
+            $contingency_fee, 
+            $health_exam_fee, 
+            $scout_fee, 
+            $exam_fee, 
+            $other_fee, 
+            $event_fee)";
+                    $result2 = mysqli_query($con, $sql2);
+                    if ($result2) {
+                        echo '<div class="alert alert-success" role="alert">Request successfully sent to department</div>';
+                    } else {
+                        echo '<div class="alert alert-danger" role="alert">Error: Unable to submit the request</div>';
+                    }
+                } else {
+                    echo '<div class="alert alert-warning" role="alert">The total payment amount must be greater than 0.</div>';
+                }
+
             }
         }
-
-        $sql = "SELECT * FROM department_approval WHERE registration_no='$registration_no'";
+        $sql = "SELECT * FROM applications WHERE registration_no='$registration_no'";
         $result1 = mysqli_query($con, $sql);
-        $sql5 = "SELECT h.exam, h.date, h.to_pay, h.status AS h_status, d.status AS d_status, h.registration_no ,
-            h.id as h_id, d.id as d_id
-             FROM hall_approval h 
-             JOIN department_approval d 
-             ON h.id=d.id 
-             WHERE h.registration_no='$registration_no'";
-        $result5 = mysqli_query($con, $sql5);
         ?>
         <div id="application-status" class="section">
-            <div class="card">
-                <div class="card-header">
+            <div class="card mx-auto" style="max-width: 900px;">
+                <div class="card-header text-center">
                     <h2>My Application Status</h2>
                 </div>
                 <div class="card-body">
@@ -237,7 +507,7 @@ $student = mysqli_fetch_assoc($result);
                             <tr>
                                 <th>Exam name</th>
                                 <th>Date</th>
-                                <th>To pay</th>
+                                <th>Total Due</th>
                                 <th>Status</th>
                                 <th>Action</th>
                                 <th>Admit Card</th>
@@ -245,34 +515,40 @@ $student = mysqli_fetch_assoc($result);
                         </thead>
                         <tbody>
                             <?php
-                            while ($row5 = mysqli_fetch_assoc($result1)) {
-                                $cur_id = $row5['id'];
-                                $sql10 = "select * from hall_approval where id=$cur_id";
-                                $result10 = mysqli_query($con, $sql10);
-                                $row11 = mysqli_fetch_assoc($result10);
-                                $status = 'Pending';
-                                if (isset($row11) && is_array($row11)) {
-                                    if ($row5['status'] == 'paid') $status = 'Paid';
-                                    if ($row5['status'] == 'declined' || $row11['status'] == 'declined')
-                                        $status = 'Declined';
-                                    else if ($row5['status'] == 'approved' && $row11['status'] == 'approved')
-                                        $status = 'Approved';
+                            while ($row = mysqli_fetch_assoc($result1)) {
+                                // Get hall_approval and department_approval from the applications table
+                                $hall_approval = $row['hall_approval'];
+                                $department_approval = $row['department_approval'];
+                                $status = 'Pending';  // Default status
+                            
+                                // Determine the status based on approval values
+                                if ($hall_approval == 2 || $department_approval == 2) {
+                                    $status = 'Declined';
+                                } else if ($hall_approval == 1 && $department_approval == 1) {
+                                    $status = 'Approved';
+                                }
+                                else if($hall_approval == 3 && $department_approval == 3){
+                                    $status = 'Paid';
                                 }
                                 ?>
                                 <tr>
-                                    <td><?php echo $row5['exam']; ?></td>
-                                    <td><?php echo $row5['date']; ?></td>
-                                    <td><?php echo $row5['to_pay']; ?></td>
+                                    <td><?php echo $row['exam']; ?></td>
+                                    <td><?php echo $row['date']; ?></td>
+                                    <td><?php echo $row['total_due']; ?></td>
                                     <td>
                                         <div class="statusField">
                                             <?php echo $status; ?>
                                         </div>
                                     </td>
                                     <td>
-                                        <a class="btn btn-outline-success payButton hidden" href="payment.php?to_pay=<?php echo $row5['to_pay']?>&registration_no=<?php echo $registration_no?>&id=<?php echo $cur_id?>">Pay</a>
+                                        <a class="btn btn-outline-success payButton hidden"
+                                            href="payment.php?total_due=<?php echo $row['total_due']; ?>&registration_no=<?php echo $registration_no; ?>&id=<?php echo $row['app_id']; ?>">Pay</a>
+
                                     </td>
                                     <td>
-                                        <a class="btn btn-outline-success admitCard hidden" href="admit.php?registration_no=<?php echo $registration_no?>&exam=<?php echo $row5['exam']?>">Admit card</a>
+                                        <a class="btn btn-outline-success admitCard hidden"
+                                            href="admit.php?registration_no=<?php echo $registration_no ?>&exam=<?php echo $row['exam'] ?>">Admit
+                                            card</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -301,6 +577,28 @@ $student = mysqli_fetch_assoc($result);
                 }
             });
         });
+        document.addEventListener('DOMContentLoaded', function () {
+            var statusFields = document.querySelectorAll('.statusField');
+
+            statusFields.forEach(function (statusField) {
+                var statusText = statusField.innerText.trim().toLowerCase();
+
+                // Remove any previous status classes
+                statusField.classList.remove('approved', 'declined', 'pending', 'paid');
+
+                // Add appropriate status class based on text
+                if (statusText === 'approved') {
+                    statusField.classList.add('approved');
+                } else if (statusText === 'declined') {
+                    statusField.classList.add('declined');
+                } else if (statusText === 'pending') {
+                    statusField.classList.add('pending');
+                } else if (statusText === 'paid') {
+                    statusField.classList.add('paid');
+                }
+            });
+        });
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

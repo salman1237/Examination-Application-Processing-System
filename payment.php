@@ -5,7 +5,7 @@ $registration_no=$_GET['registration_no'];
 $post_data = array();
 $post_data['store_id'] = "jahan664e4ee30f771";
 $post_data['store_passwd'] = "jahan664e4ee30f771@ssl";
-$post_data['total_amount'] = $_GET['to_pay'];
+$post_data['total_amount'] = $_GET['total_due'];
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_".uniqid();
 $post_data['success_url'] = "http://localhost/payment/success.php?registration_no=$registration_no&id=$id";
