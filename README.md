@@ -1,7 +1,3 @@
-Here's a README file for your project based on the uploaded files:
-
----
-
 # Examination Application Processing System
 
 ## Overview

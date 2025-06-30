@@ -189,7 +189,7 @@ $student = mysqli_fetch_assoc($result);
 
     <div class="container">
         <div id="profile" class="section">
-            <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card mx-auto" style="max-width: 1000px;">
                 <div class="card-header text-center">
                     <h2>Student Profile</h2>
                 </div>
@@ -296,7 +296,7 @@ $student = mysqli_fetch_assoc($result);
 
 
         <div id="new-application" class="section">
-            <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card mx-auto" style="max-width: 1000px;">
                 <div class="card-header text-center">
                     <h2>New Application Form</h2>
                 </div>
@@ -591,7 +591,7 @@ $student = mysqli_fetch_assoc($result);
         $result1 = mysqli_query($con, $sql);
         ?>
         <div id="application-status" class="section">
-            <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card mx-auto" style="max-width: 1000px;">
                 <div class="card-header text-center">
                     <h2>My Application Status</h2>
                 </div>
@@ -634,9 +634,10 @@ $student = mysqli_fetch_assoc($result);
                                         </div>
                                     </td>
                                     <td>
-                                        <a class="btn btn-outline-success payButton hidden"
+                                        <a class="btn btn-sm btn-info" href="view-application.php?id=<?php echo $row['app_id']; ?>">View</a>
+                                        <a class="btn btn-sm btn-danger" href="#" onclick="confirmDelete(<?php echo $row['app_id']; ?>); return false;">Delete</a>
+                                        <a class="btn btn-sm btn-outline-success payButton hidden"
                                             href="payment.php?total_due=<?php echo $row['total_due']; ?>&registration_no=<?php echo $registration_no; ?>&id=<?php echo $row['app_id']; ?>">Pay</a>
-
                                     </td>
                                     <td>
                                         <a class="btn btn-outline-success admitCard hidden"
@@ -692,6 +693,12 @@ $student = mysqli_fetch_assoc($result);
             });
         });
 
+        // Function to confirm deletion of application
+        function confirmDelete(appId) {
+            if (confirm('Are you sure you want to delete this application?')) {
+                window.location.href = 'delete-application.php?id=' + appId;
+            }
+        }
     </script>
 </body>
 

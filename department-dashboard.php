@@ -308,13 +308,13 @@ $result = mysqli_query($con, $sql);
                 </tbody>
             </table>
             <div class="card-header text-center">
-            <h3>Dues</h3>
+            <h3>Fee Details</h3>
             </div>
-            <table class="table table-bordered table-striped">
-                <thead>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
                     <tr>
-                        <th>Due Description</th>
-                        <th>Amount</th>
+                        <th>Fee Type</th>
+                        <th>Amount (BDT)</th>
                     </tr>
                 </thead>
                 <tbody>';
@@ -324,21 +324,46 @@ $result = mysqli_query($con, $sql);
             $result = mysqli_query($con, $sql);
             $xyz = mysqli_fetch_assoc($result);
 
-            // Loop through dues and display non-zero values
-            foreach ($dueFields as $field) {
+            // Define fee fields with Bengali labels
+            $fee_fields = [
+                'student_fee' => 'ছাত্র বেতন',
+                'hall_rent' => 'হল সীট ভাড়া',
+                'admission_fee' => 'ভর্তি/পুনঃ ভতি ফিস',
+                'late_admission_fee' => 'বিলম্বে ভর্তি ফিস',
+                'library_deposit' => 'গ্রন্থাগার/গবেষণা জামানত',
+                'students_council' => 'ছাত্র সংসদ চাঁদা',
+                'sports_fee' => 'ক্রীড়া চাঁদা',
+                'hall_students_council' => 'হল ছাত্র সংসদ',
+                'hall_sports_fee' => 'হল ছাত্র ক্রীড়া ফি',
+                'common_room_fee' => 'কমনরুম ফি',
+                'session_charge' => 'সেশন চার্জ',
+                'welfare_fund' => 'ছাত্র কল্যাণ তহবিল',
+                'registration_fee' => 'রেজিস্ট্রেশন ফি',
+                'hall_deposit' => 'হল জামানতের টাকা',
+                'utensil_fee' => 'বাসনপত্র ফি',
+                'contingency_fee' => 'পরিসংখ্যান কন্টিনজেন্সী',
+                'health_exam_fee' => 'সাময়িক পত্র/স্বাস্থ্য পরীক্ষা ফি',
+                'scout_fee' => 'রোভার স্কাউট/পরিচয় পত্র ফি',
+                'exam_fee' => 'পরীক্ষার ফি',
+                'other_fee' => 'অন্যান্য/জরিমানা',
+                'event_fee' => 'অনুষ্ঠান ফি',
+            ];
+
+            // Loop through fees and display non-zero values
+            foreach ($fee_fields as $field => $label) {
                 if (isset($xyz[$field]) && $xyz[$field] > 0) {
                     echo '<tr>
-                            <td>' . ucfirst(str_replace('_', ' ', $field)) . '</td>
+                            <td>' . $label . '</td>
                             <td>' . $xyz[$field] . '</td>
                         </tr>';
-                    $totalDue += $xyz[$field];  // Add the due to total
+                    $totalDue += $xyz[$field];  // Add the fee to total
                 }
             }
 
             // Display total due at the bottom
-            echo '<tr>
-                    <td><strong>Total Due</strong></td>
-                    <td><strong>' . $totalDue . '</strong></td>
+            echo '<tr class="table-dark">
+                    <th>Total</th>
+                    <th>' . $totalDue . '</th>
                 </tr>';
 
             echo '</tbody>
@@ -346,8 +371,8 @@ $result = mysqli_query($con, $sql);
             <div class="card-header text-center">
             <h3>Selected Courses</h3>
             </div>
-            <table class="table table-bordered table-striped">
-                <thead>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
                     <tr>
                         <th>Course Code</th>
                         <th>Course Name</th>

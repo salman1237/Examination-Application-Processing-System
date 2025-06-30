@@ -50,7 +50,7 @@ echo '<div class="table-responsive">';
 echo '<table class="table table-bordered table-striped">';
 echo '<thead class="thead-dark">';
 echo '<tr>';
-echo '<th>Select</th>';
+echo '<th><input type="checkbox" id="select-all"> Select All</th>';
 echo '<th>Course Code</th>';
 echo '<th>Course Title</th>';
 echo '</tr>';
@@ -72,7 +72,6 @@ echo '</div>';
 // Add a hidden input to store selected courses as JSON
 echo '<input type="hidden" name="courses_json" id="courses_json" value="">';
 
-// Add JavaScript to update the hidden input when checkboxes change
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  <!-- Ensure jQuery is loaded -->
@@ -82,6 +81,13 @@ echo '<input type="hidden" name="courses_json" id="courses_json" value="">';
         // Function to update courses_json hidden input when checkbox is changed
         $(".course-checkbox").change(function() {
             updateCoursesJson();
+        });
+
+        // Function to update hidden input when Select All checkbox is changed
+        $("#select-all").change(function() {
+            var isChecked = $(this).prop("checked");
+            $(".course-checkbox").prop("checked", isChecked);
+            updateCoursesJson();  // Update courses JSON whenever the selection changes
         });
 
         // Function to collect selected courses and update hidden input
@@ -106,6 +112,3 @@ echo '<input type="hidden" name="courses_json" id="courses_json" value="">';
         }
     });
 </script>
-
-<?php
-?>
