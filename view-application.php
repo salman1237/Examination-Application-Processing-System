@@ -133,7 +133,10 @@ if ($hall_approval == 2 || $department_approval == 2) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="student-dashboard.php#profile">Profile</a>
+                    <a class="nav-link" href="profile.php">
+                        <img src="images/<?php echo $student['image']; ?>" alt="Profile" class="rounded-circle" 
+                             style="width: 30px; height: 30px; object-fit: cover; border: 2px solid white;">
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="student-dashboard.php#new-application">Application Form</a>

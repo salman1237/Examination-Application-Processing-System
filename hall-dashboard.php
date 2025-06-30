@@ -276,7 +276,7 @@ $result = mysqli_query($con, $sql);
                     </tr>
                     <tr>
                         <th>HSC GPA</th>
-                        <td>' . $student['HSC_GPA'] . '</td>
+                        <td>' . number_format((float)$student['HSC_GPA'], 2, '.', '') . '</td>
                     </tr>
                     <tr>
                         <th>HSC Group</th>
@@ -292,7 +292,7 @@ $result = mysqli_query($con, $sql);
                     </tr>
                     <tr>
                         <th>SSC GPA</th>
-                        <td>' . $student['SSC_GPA'] . '</td>
+                        <td>' . number_format((float)$student['SSC_GPA'], 2, '.', '') . '</td>
                     </tr>
                     <tr>
                         <th>SSC Group</th>

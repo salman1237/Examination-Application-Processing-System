@@ -1,103 +1,109 @@
-# Examination Application Processing System
+# Examination Fee Payment System
 
 ## Overview
 
-The **Examination Application Processing System** is a web-based platform designed to manage the registration, payment, and approval processes for students applying to exams in various departments and halls. The system provides seamless interaction between students, departments, and halls, ensuring that all the steps from application submission to final approval are tracked and processed efficiently.
+The **Examination Fee Payment System** is a comprehensive web-based platform designed for university students to apply for examinations, make fee payments, and track application status. The system streamlines the entire process from application submission to approval by department and hall authorities, and finally to fee payment and admit card generation.
 
 ## Features
 
-* **Student Registration**: Students can register their personal and academic details, including hall and department assignments.
-* **Department Approval**: Departments can approve or reject applications based on departmental requirements.
-* **Hall Approval**: Halls can review and approve student applications based on hall-specific criteria.
-* **Payment Integration**: Students' payments for applications are tracked, and their status is updated accordingly.
-* **Admin Panel**: Admins can oversee all operations, including approvals, student data management, and report generation.
-* **User Authentication**: Secure login for both students and administrative users.
+* **Student Dashboard**: Students can view their profile, submit new applications, and track application status.
+* **Profile Management**: Students can view and edit their personal and academic information.
+* **Application Submission**: Students can select courses, specify fee details, and submit applications for examinations.
+* **Department Approval**: Department authorities can review and approve/reject student applications.
+* **Hall Approval**: Hall authorities can review and approve/reject student applications.
+* **Payment Processing**: Secure payment gateway integration for fee collection.
+* **Admit Card Generation**: Automatic generation of admit cards after successful payment.
+* **Application Status Tracking**: Real-time tracking of application status (Pending, Approved, Declined, Paid).
 
 ## Database Structure
 
-### Tables
+### Key Tables
 
-* **student**: Contains student personal information and academic details.
-* **department**: Holds department details, including department name and password for authentication.
-* **department\_approval**: Stores the approval status for student applications at the departmental level.
-* **hall**: Contains hall names and authentication details.
-* **hall\_approval**: Holds approval status for student applications at the hall level.
+* **student**: Stores student personal information, academic details, and authentication credentials.
+* **applications**: Contains examination application details including fees, approval status, and payment information.
+* **application_courses**: Links applications to selected courses for each examination.
+* **courses**: Stores course information organized by department, year, and semester.
+* **department**: Contains department information and authentication credentials.
+* **hall**: Stores hall information and authentication credentials.
 
-### Example Data
+### Relationships
 
-The database has been populated with example data, including a few students, departments, halls, and approvals.
+* Students submit applications for examinations
+* Each application can have multiple courses
+* Department and hall authorities approve applications
+* Approved applications can proceed to payment
+* Paid applications generate admit cards
 
-* **Departments**: iit, cse, pharmacy, mathematics, statistics, physics, chemistry.
-* **Halls**: Shaheed Tazudiin Ahmed Hall, Sheikh Rassel Hall, Mowlana Bhashani Hall, Fazilatunnesa Hall, Prtilata Hall, Sheikh Hasina Hall, Khaleda Zia Hall.
+### Sample Data
 
-### Example Query (SQL)
+The system includes sample data for testing:
 
-```sql
--- Insert a new department
-INSERT INTO `department` (`id`, `name`, `password`) VALUES (8, 'new_department', 'password123');
-```
+* **Departments**: IIT, CSE, Pharmacy, Mathematics, Statistics, Physics, Chemistry
+* **Halls**: Shaheed Tazudiin Ahmed Hall, Sheikh Rassel Hall, Mowlana Bhashani Hall, Fazilatunnesa Hall, Prtilata Hall, Sheikh Hasina Hall, Khaleda Zia Hall
+* **Fee Types**: Student fee, Hall rent, Admission fee, Library deposit, Sports fee, etc.
 
 ## Technologies Used
 
-* **Frontend**: HTML, CSS, JavaScript (React/Vue.js)
-* **Backend**: PHP, MySQL/MariaDB
-* **Authentication**: Secure login mechanism for both students and admin.
-* **Database**: MySQL/MariaDB for storing student, department, and hall data.
-* **Payment Gateway**: Handles payment processing for exam applications.
+* **Frontend**: HTML, CSS, Bootstrap 4.5, jQuery, JavaScript
+* **Backend**: PHP 8.0+
+* **Database**: MySQL/MariaDB
+* **Authentication**: Session-based authentication for students, departments, and halls
+* **Payment Gateway**: Integration with payment processing services
+* **PDF Generation**: mPDF library for admit card generation
 
 ## Installation
 
 ### Prerequisites
 
-* **PHP** (version 8.0 or higher)
-* **MySQL** or **MariaDB** (version 10.4 or higher)
-* **Apache** or **Nginx** for serving the application
+* **XAMPP** (or similar package with PHP 8.0+, MySQL, Apache)
+* **Web Browser** (Chrome, Firefox, Edge, etc.)
+* **Internet Connection** (for Bootstrap and jQuery CDN)
 
 ### Steps to Run Locally
 
-1. **Clone the repository**:
-
+1. **Clone or download the project**:
    ```bash
-   git clone https://github.com/salman1237/Examination-Application-Processing-System.git
-   cd Examination-Application-Processing-System
+   git clone https://github.com/yourusername/examination-fee-payment.git
    ```
+   Or download and extract the ZIP file.
 
-2. **Set up the database**:
+2. **Set up the environment**:
+   * Place the project folder in your XAMPP's htdocs directory
+   * Start Apache and MySQL services from XAMPP control panel
 
-   * Import the SQL file `exampayment.sql` into your MySQL/MariaDB database using phpMyAdmin or the MySQL command line.
+3. **Import the database**:
+   * Open phpMyAdmin (http://localhost/phpmyadmin)
+   * Create a new database named 'exampayment'
+   * Import the `exampayment.sql` file
 
-   ```bash
-   mysql -u username -p database_name < exampayment.sql
-   ```
+4. **Configure database connection**:
+   * Edit the `connect.php` file with your database credentials if needed
 
-3. **Configure Database Connection**:
+5. **Access the application**:
+   * Open your browser and navigate to `http://localhost/payment`
 
-   * Edit the database configuration file (e.g., `dbconfig.php`) to set your MySQL/MariaDB credentials.
+## User Guide
 
-4. **Start the Apache server** (if using Apache):
+### For Students
 
-   ```bash
-   sudo systemctl start apache2
-   ```
+* **Login**: Use your registration number and password
+* **Profile Management**: View and edit your personal information
+* **Application Submission**: Select year, semester, courses, and specify fees
+* **Application Tracking**: Monitor application status (Pending, Approved, Declined, Paid)
+* **Payment**: Make payments for approved applications
+* **Admit Card**: Download admit cards for paid applications
 
-5. **Access the Application**:
+### For Department Authorities
 
-   * Open your browser and navigate to `http://localhost/examination-app`.
+* **Login**: Use department credentials
+* **Application Review**: View student applications and their details
+* **Approval/Rejection**: Approve or reject applications based on department criteria
 
-## Usage
+### For Hall Authorities
 
-* **Students**:
-
-  * Register, log in, and submit applications for exams.
-  * Check the status of applications and make payments.
-
-* **Departments**:
-
-  * View and approve or reject student applications.
-
-* **Halls**:
-
-  * Review and approve student applications based on hall criteria.
+* **Login**: Use hall credentials
+* **Application Review**: View student applications and their details
+* **Approval/Rejection**: Approve or reject applications based on hall criteria
 
 ## Contribution
 

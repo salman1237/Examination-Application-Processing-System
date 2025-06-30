@@ -42,7 +42,7 @@ $student = mysqli_fetch_assoc($result);
         .table th,
         .table td {
             vertical-align: middle;
-            text-align: center;
+            text-align: left;
         }
 
         .table th {
@@ -61,6 +61,7 @@ $student = mysqli_fetch_assoc($result);
 
         .card {
             margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .navbar-brand {
@@ -73,10 +74,35 @@ $student = mysqli_fetch_assoc($result);
 
         .navbar-brand img {
             height: 40px;
-            /* Adjust the height as needed */
             margin-right: 10px;
-            /* Space between logo and text */
         }
+        
+        /* New styles for student profile card */
+        .student-card {
+            transition: all 0.3s ease;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .student-card .card-header {
+            font-weight: bold;
+        }
+        
+        .student-card p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .student-card strong {
+            color: #495057;
+        }
+        
+        /* .table-sm th, .table-sm td {
+            padding: 0.5rem;
+        } */
 
         .card {
             background-color: white;
@@ -172,9 +198,6 @@ $student = mysqli_fetch_assoc($result);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#profile">Profile</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#new-application">Application Form</a>
                 </li>
                 <li class="nav-item">
@@ -182,6 +205,11 @@ $student = mysqli_fetch_assoc($result);
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.php">
+                        <img src="images/<?php echo $student['image']; ?>" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover; border: 2px solid white;">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -194,102 +222,34 @@ $student = mysqli_fetch_assoc($result);
                     <h2>Student Profile</h2>
                 </div>
                 <div class="card-body">
-                    <div class="image-container text-center">
-                        <img src="images/<?php echo $student['image']; ?>" alt="Student Image"
-                            class="img-fluid rounded-circle" style="max-width: 150px;">
+                    <!-- Compact Student Card with Key Details -->
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <div class="card border-primary student-card">
+                                <div class="card-header bg-primary text-white">
+                                    <h4><?php echo $student['name']; ?></h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Department:</strong> <?php echo $student['department']; ?></p>
+                                            <p><strong>Registration No:</strong> <?php echo $student['registration_no']; ?></p>
+                                            <p><strong>Student ID:</strong> <?php echo $student['id']; ?></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Exam Roll:</strong> <?php echo $student['exam_roll']; ?></p>
+                                            <p><strong>Hall:</strong> <?php echo $student['hall']; ?></p>
+                                            <p><strong>Session:</strong> <?php echo $student['session']; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <img src="images/<?php echo $student['image']; ?>" alt="Student Image"
+                                class="img-fluid rounded-circle" style="max-width: 180px; border: 4px solid #007bff; padding: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        </div>
                     </div>
-                    <table class="table table-bordered table-striped">
-                        <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <td><?php echo $student['name']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Father's Name</th>
-                                <td><?php echo $student['father_name']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Mother's Name</th>
-                                <td><?php echo $student['mother_name']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Session</th>
-                                <td><?php echo $student['session']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Student ID</th>
-                                <td><?php echo $student['id']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Exam Roll</th>
-                                <td><?php echo $student['exam_roll']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Registration No</th>
-                                <td><?php echo $student['registration_no']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Hall</th>
-                                <td><?php echo $student['hall']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Department</th>
-                                <td><?php echo $student['department']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Date of Birth</th>
-                                <td><?php echo $student['dob']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Gender</th>
-                                <td><?php echo $student['sex']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td><?php echo $student['email']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Phone</th>
-                                <td><?php echo $student['phone']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>Permanent Address</th>
-                                <td><?php echo $student['permanent_address']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>HSC Year</th>
-                                <td><?php echo $student['HSC_year']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>HSC GPA</th>
-                                <td><?php echo $student['HSC_GPA']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>HSC Group</th>
-                                <td><?php echo $student['HSC_group']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>HSC Board</th>
-                                <td><?php echo $student['HSC_board']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>SSC Year</th>
-                                <td><?php echo $student['SSC_year']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>SSC GPA</th>
-                                <td><?php echo $student['SSC_GPA']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>SSC Group</th>
-                                <td><?php echo $student['SSC_group']; ?></td>
-                            </tr>
-                            <tr>
-                                <th>SSC Board</th>
-                                <td><?php echo $student['SSC_board']; ?></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
@@ -307,6 +267,7 @@ $student = mysqli_fetch_assoc($result);
                             <div class="form-group col-md-6">
                                 <label for="year">Year</label>
                                 <select class="form-control" id="year" name="year" required>
+                                    <option value="">Select Year</option>
                                     <option value="1st">1st</option>
                                     <option value="2nd">2nd</option>
                                     <option value="3rd">3rd</option>
@@ -316,6 +277,7 @@ $student = mysqli_fetch_assoc($result);
                             <div class="form-group col-md-6">
                                 <label for="semester">Semester</label>
                                 <select class="form-control" id="semester" name="semester" required>
+                                    <option value="">Select Semester</option>
                                     <option value="1st">1st</option>
                                     <option value="2nd">2nd</option>
                                 </select>
@@ -364,11 +326,8 @@ $student = mysqli_fetch_assoc($result);
                                     loadCourses();
                                 });
 
-                                // Set default values for 1st Year and 1st Semester
-                                // $("#year").val("1st");
-                                // $("#semester").val("1st");
-
-                                // Load courses for the default selection (1st Year, 1st Semester)
+                                // No default values for Year and Semester - user must select both
+                                // Load courses function will show a message to select year and semester
                                 loadCourses();
                             });
 
