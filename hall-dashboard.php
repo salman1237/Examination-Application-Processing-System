@@ -169,41 +169,41 @@ $result = mysqli_query($con, $sql);
                 </script>';
         }
         if (isset($_POST['verify'])) {
-    $reg = $_POST['reg'];
-    $app_id = $_POST['id'];
-    $sql = "SELECT * FROM student WHERE (registration_no='$reg')";
-    $result = mysqli_query($con, $sql);
-    $student = mysqli_fetch_assoc($result);
+            $reg = $_POST['reg'];
+            $app_id = $_POST['id'];
+            $sql = "SELECT * FROM student WHERE (registration_no='$reg')";
+            $result = mysqli_query($con, $sql);
+            $student = mysqli_fetch_assoc($result);
 
-    // Define an array for dues
-    $dueFields = [
-        'student_fee',
-        'hall_rent',
-        'admission_fee',
-        'late_admission_fee',
-        'library_deposit',
-        'students_council',
-        'sports_fee',
-        'hall_students_council',
-        'hall_sports_fee',
-        'common_room_fee',
-        'session_charge',
-        'welfare_fund',
-        'registration_fee',
-        'hall_deposit',
-        'utensil_fee',
-        'contingency_fee',
-        'health_exam_fee',
-        'scout_fee',
-        'exam_fee',
-        'other_fee',
-        'event_fee'
-    ];
+            // Define an array for dues
+            $dueFields = [
+                'student_fee',
+                'hall_rent',
+                'admission_fee',
+                'late_admission_fee',
+                'library_deposit',
+                'students_council',
+                'sports_fee',
+                'hall_students_council',
+                'hall_sports_fee',
+                'common_room_fee',
+                'session_charge',
+                'welfare_fund',
+                'registration_fee',
+                'hall_deposit',
+                'utensil_fee',
+                'contingency_fee',
+                'health_exam_fee',
+                'scout_fee',
+                'exam_fee',
+                'other_fee',
+                'event_fee'
+            ];
 
-    // Initialize a variable to calculate total due
-    $totalDue = 0;
+            // Initialize a variable to calculate total due
+            $totalDue = 0;
 
-    echo '
+            echo '
     <div class="card mx-auto" style="max-width: 750px;">
         <div class="card-header text-center">
             <h3>Student Profile</h3>
@@ -314,33 +314,59 @@ $result = mysqli_query($con, $sql);
                 </thead>
                 <tbody>';
 
-                // Query to fetch the application data
-                $sql = "SELECT * FROM applications WHERE (app_id='$app_id')";
-                $result = mysqli_query($con, $sql);
-                $xyz = mysqli_fetch_assoc($result);
+            // Query to fetch the application data
+            $sql = "SELECT * FROM applications WHERE (app_id='$app_id')";
+            $result = mysqli_query($con, $sql);
+            $xyz = mysqli_fetch_assoc($result);
 
-                // Loop through dues and display non-zero values
-                foreach ($dueFields as $field) {
-                    if (isset($xyz[$field]) && $xyz[$field] > 0) {
-                        echo '<tr>
+            // Loop through dues and display non-zero values
+            foreach ($dueFields as $field) {
+                if (isset($xyz[$field]) && $xyz[$field] > 0) {
+                    echo '<tr>
                             <td>' . ucfirst(str_replace('_', ' ', $field)) . '</td>
                             <td>' . $xyz[$field] . '</td>
                         </tr>';
-                        $totalDue += $xyz[$field];  // Add the due to total
-                    }
+                    $totalDue += $xyz[$field];  // Add the due to total
                 }
+            }
 
-                // Display total due at the bottom
-                echo '<tr>
+            // Display total due at the bottom
+            echo '<tr>
                     <td><strong>Total Due</strong></td>
                     <td><strong>' . $totalDue . '</strong></td>
                 </tr>';
 
-                echo '</tbody>
+            echo '</tbody>
+            </table>
+            <div class="card-header text-center">
+            <h3>Selected Courses</h3>
+            </div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                    </tr>
+                </thead>
+                <tbody>';
+
+            // Query to fetch the application data
+            $sql = "SELECT courses.course_code, courses.course_title
+        FROM application_courses
+        JOIN courses ON application_courses.course_id = courses.id
+        WHERE application_courses.app_id = '$app_id'";
+            $result = mysqli_query($con, $sql);
+            while ($course = mysqli_fetch_assoc($result)) {
+                echo '<tr>
+                <td>' . htmlspecialchars($course['course_code']) . '</td>
+                <td>' . htmlspecialchars($course['course_title']) . '</td>
+            </tr>';
+            }
+            echo '</tbody>
             </table>
         </div>
     </div>';
-}
+        }
         ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

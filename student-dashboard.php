@@ -155,6 +155,9 @@ $student = mysqli_fetch_assoc($result);
         }
     </style>
 </head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -319,6 +322,58 @@ $student = mysqli_fetch_assoc($result);
                             </div>
                         </div>
 
+                        <div id="coursesList" class="form-group">
+                            <label>Courses</label>
+                            <div class="alert alert-info">Select year and semester to view available courses</div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                // Function to load courses based on selected year and semester
+                                function loadCourses() {
+                                    var year = $("#year").val();
+                                    var semester = $("#semester").val();
+                                    var department = "<?php echo $student['department']; ?>";
+
+                                    if (year && semester) {
+                                        // Show loading message
+                                        $("#coursesList").html('<label>Courses</label><div class="alert alert-info">Loading courses...</div>');
+
+                                        // Make AJAX request to get courses
+                                        $.ajax({
+                                            url: "get_courses.php",
+                                            type: "POST",
+                                            data: {
+                                                year: year,
+                                                semester: semester,
+                                                department: department
+                                            },
+                                            success: function (response) {
+                                                $("#coursesList").html(response);
+                                            },
+                                            error: function () {
+                                                $("#coursesList").html('<label>Courses</label><div class="alert alert-danger">Error loading courses</div>');
+                                            }
+                                        });
+                                    } else {
+                                        $("#coursesList").html('<label>Courses</label><div class="alert alert-info">Please select a year and semester to view available courses</div>');
+                                    }
+                                }
+
+                                // Load courses when year or semester changes
+                                $("#year, #semester").change(function () {
+                                    loadCourses();
+                                });
+
+                                // Set default values for 1st Year and 1st Semester
+                                // $("#year").val("1st");
+                                // $("#semester").val("1st");
+
+                                // Load courses for the default selection (1st Year, 1st Semester)
+                                loadCourses();
+                            });
+
+                        </script>
+
                         <div class="form-row">
                             <?php
                             $fields = [
@@ -451,6 +506,10 @@ $student = mysqli_fetch_assoc($result);
                     $hall_name = $student['hall'];
                     $department_name = $student['department'];
                     $exam = $year . " year " . $semester . " semester";
+
+                    // Get selected courses from the form
+                    $courses_json = isset($_POST['courses_json']) ? $_POST['courses_json'] : '';
+
                     $sql2 = "INSERT INTO applications 
             (name, registration_no, department_name, hall_name, exam, total_due, student_fee, hall_rent, admission_fee, late_admission_fee, library_deposit, students_council, sports_fee, hall_students_council, hall_sports_fee, common_room_fee, session_charge, welfare_fund, registration_fee, hall_deposit, utensil_fee, contingency_fee, health_exam_fee, scout_fee, exam_fee, other_fee, event_fee)
           VALUES 
@@ -483,6 +542,41 @@ $student = mysqli_fetch_assoc($result);
             $event_fee)";
                     $result2 = mysqli_query($con, $sql2);
                     if ($result2) {
+                        $app_id = mysqli_insert_id($con);
+                        //echo "<script>alert('The application ID is: " . $app_id . "');</script>";
+                        // Get selected courses from the form
+                        $courses_json = isset($_POST['courses_json']) ? $_POST['courses_json'] : '';
+
+                        // Decode the JSON data into an associative array
+                        $courses_array = json_decode($courses_json, true);
+
+                        // Check if any courses were selected
+                        if (is_array($courses_array) && !empty($courses_array)) {
+                            // Assuming you already have the app_id (you can get it from the session or other logic)
+                            // Loop through the selected courses
+                            foreach ($courses_array as $course) {
+                                $course_id = $course['id'];  // Extract the course_id from the array
+        
+                                // Prepare the SQL query to insert into application_courses table
+                                $query = "INSERT INTO application_courses (app_id, course_id) VALUES (?, ?)";
+
+                                // Prepare the statement
+                                if ($stmt = mysqli_prepare($con, $query)) {
+                                    // Bind the parameters
+                                    mysqli_stmt_bind_param($stmt, 'ii', $app_id, $course_id);
+
+                                    // Execute the statement
+                                    mysqli_stmt_execute($stmt);
+                                } else {
+                                    echo '<div class="alert alert-danger">Query preparation failed: ' . mysqli_error($con) . '</div>';
+                                }
+                            }
+
+                            echo '<div class="alert alert-success">Courses successfully added to the application.</div>';
+                        } else {
+                            echo '<div class="alert alert-warning">No courses selected</div>';
+                        }
+
                         echo '<div class="alert alert-success" role="alert">Request successfully sent to department</div>';
                     } else {
                         echo '<div class="alert alert-danger" role="alert">Error: Unable to submit the request</div>';
@@ -526,8 +620,7 @@ $student = mysqli_fetch_assoc($result);
                                     $status = 'Declined';
                                 } else if ($hall_approval == 1 && $department_approval == 1) {
                                     $status = 'Approved';
-                                }
-                                else if($hall_approval == 3 && $department_approval == 3){
+                                } else if ($hall_approval == 3 && $department_approval == 3) {
                                     $status = 'Paid';
                                 }
                                 ?>
@@ -600,10 +693,6 @@ $student = mysqli_fetch_assoc($result);
         });
 
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
