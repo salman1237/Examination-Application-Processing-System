@@ -600,7 +600,7 @@ $student = mysqli_fetch_assoc($result);
                                     </td>
                                     <td>
                                         <a class="btn btn-outline-success admitCard hidden"
-                                            href="admit.php?registration_no=<?php echo $registration_no ?>&exam=<?php echo $row['exam'] ?>">Admit
+                                            href="admit-card.php?registration_no=<?php echo $registration_no ?>&exam=<?php echo $row['exam'] ?>">Admit
                                             card</a>
                                     </td>
                                 </tr>

@@ -283,7 +283,7 @@ if ($hall_approval == 2 || $department_approval == 2) {
                     <a href="payment.php?total_due=<?php echo $application['total_due']; ?>&registration_no=<?php echo $registration_no; ?>&id=<?php echo $app_id; ?>" class="btn btn-success">Pay Now</a>
                     <?php endif; ?>
                     <?php if ($status === 'Paid'): ?>
-                    <a href="admit.php?registration_no=<?php echo $registration_no ?>&exam=<?php echo $application['exam'] ?>" class="btn btn-info">Download Admit Card</a>
+                    <a href="admit-card.php?registration_no=<?php echo $registration_no ?>&exam=<?php echo $application['exam'] ?>" class="btn btn-info">View Admit Card</a>
                     <?php endif; ?>
                 </div>
             </div>

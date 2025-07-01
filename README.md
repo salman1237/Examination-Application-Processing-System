@@ -1,8 +1,8 @@
-# Examination Fee Payment System
+# Examination Application Processing System
 
 ## Overview
 
-The **Examination Fee Payment System** is a comprehensive web-based platform designed for university students to apply for examinations, make fee payments, and track application status. The system streamlines the entire process from application submission to approval by department and hall authorities, and finally to fee payment and admit card generation.
+The **Examination Application Processing System** is a comprehensive web-based platform designed for university students to apply for examinations, make fee payments, and track application status. The system streamlines the entire process from application submission to approval by department and hall authorities, and finally to fee payment and admit card generation.
 
 ## Features
 
@@ -12,7 +12,7 @@ The **Examination Fee Payment System** is a comprehensive web-based platform des
 * **Department Approval**: Department authorities can review and approve/reject student applications.
 * **Hall Approval**: Hall authorities can review and approve/reject student applications.
 * **Payment Processing**: Secure payment gateway integration for fee collection.
-* **Admit Card Generation**: Automatic generation of admit cards after successful payment.
+* **Admit Card Generation**: HTML-based admit cards with print functionality after successful payment.
 * **Application Status Tracking**: Real-time tracking of application status (Pending, Approved, Declined, Paid).
 
 ## Database Structure
@@ -49,7 +49,7 @@ The system includes sample data for testing:
 * **Database**: MySQL/MariaDB
 * **Authentication**: Session-based authentication for students, departments, and halls
 * **Payment Gateway**: Integration with payment processing services
-* **PDF Generation**: mPDF library for admit card generation
+* **Admit Card Generation**: HTML-based admit cards with browser print functionality
 
 ## Installation
 
@@ -63,7 +63,8 @@ The system includes sample data for testing:
 
 1. **Clone or download the project**:
    ```bash
-   git clone https://github.com/yourusername/examination-fee-payment.git
+   git clone https://github.com/salman1237/Examination-Application-Processing-System
+
    ```
    Or download and extract the ZIP file.
 
@@ -91,7 +92,7 @@ The system includes sample data for testing:
 * **Application Submission**: Select year, semester, courses, and specify fees
 * **Application Tracking**: Monitor application status (Pending, Approved, Declined, Paid)
 * **Payment**: Make payments for approved applications
-* **Admit Card**: Download admit cards for paid applications
+* **Admit Card**: View and print admit cards for paid applications
 
 ### For Department Authorities
 
