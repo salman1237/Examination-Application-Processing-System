@@ -15,7 +15,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma,  Geneva, Verdana, sans-serif;
         }
         
         .card {
