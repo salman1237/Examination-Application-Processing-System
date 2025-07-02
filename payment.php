@@ -8,7 +8,7 @@ $post_data['store_passwd'] = "jahan664e4ee30f771@ssl";
 $post_data['total_amount'] = $_GET['total_due'];
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_".uniqid();
-$post_data['success_url'] = "http://localhost/payment/success.php?registration_no=$registration_no&id=$id";
+$post_data['success_url'] = "http://localhost/Examination-Application-Processing-System/success.php?registration_no=$registration_no&id=$id";
 $post_data['fail_url'] = "http://localhost/new_sslcz_gw/fail.php";
 $post_data['cancel_url'] = "http://localhost/new_sslcz_gw/cancel.php";
 # $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE

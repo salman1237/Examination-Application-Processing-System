@@ -9,7 +9,11 @@ if (!isset($_SESSION['registration_no'])) {
 }
 
 $registration_no = $_SESSION['registration_no'];
-$sql = "SELECT * FROM student WHERE registration_no=$registration_no";
+$sql = "SELECT s.*, h.name as hall_name, d.name as department_name 
+       FROM student s
+       JOIN hall h ON s.hall_id = h.id
+       JOIN department d ON s.department_id = d.id
+       WHERE s.registration_no=$registration_no";
 $result = mysqli_query($con, $sql);
 $student = mysqli_fetch_assoc($result);
 
@@ -200,8 +204,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 'id' => 'Student ID',
                                 'exam_roll' => 'Exam Roll',
                                 'registration_no' => 'Registration No',
-                                'hall' => 'Hall',
-                                'department' => 'Department',
+                                'hall_name' => 'Hall',
+                                'department_name' => 'Department',
                                 'sex' => 'Gender',
                                 'HSC_year' => 'HSC Year',
                                 'HSC_GPA' => 'HSC GPA',

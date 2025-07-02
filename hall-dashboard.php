@@ -6,9 +6,11 @@ $sql = "select * from hall where id=$id";
 $result = mysqli_query($con, $sql);
 $hall = mysqli_fetch_assoc($result);
 $hall_name = $hall['name'];
-$sql = "SELECT a.*, s.* 
+$sql = "SELECT a.*, s.*, h.name as hall_name, d.name as department_name 
         FROM applications a 
         JOIN student s ON a.registration_no = s.registration_no 
+        JOIN hall h ON a.hall_id = h.id
+        JOIN department d ON a.department_id = d.id
         WHERE (a.hall_approval = 0 && a.department_approval = 1)";
 $result = mysqli_query($con, $sql);
 ?>
@@ -121,7 +123,7 @@ $result = mysqli_query($con, $sql);
                         <td> <?php echo $row1['name'] ?></td>
                         <td> <?php echo $row1['session'] ?></td>
                         <td> <?php echo $row1['registration_no'] ?></td>
-                        <td> <?php echo $row1['hall'] ?></td>
+                        <td> <?php echo $row1['hall_name'] ?></td>
                         <td> <?php echo $row1['exam'] ?></td>
                         <td> <?php echo $row1['date'] ?></td>
                         <td> <?php echo $row1['total_due'] ?></td>
@@ -130,7 +132,8 @@ $result = mysqli_query($con, $sql);
                                 <input type="hidden" name="reg" value="<?php echo $row1['registration_no']; ?>" />
                                 <input type="hidden" name="id" value="<?php echo $row1['app_id']; ?>" />
                                 <input type="hidden" name="exam" value="<?php echo $row1['exam']; ?>" />
-                                <input type="hidden" name="hall" value="<?php echo $row1['hall']; ?>" />
+                                <input type="hidden" name="hall_id" value="<?php echo $row1['hall_id']; ?>" />
+                                <input type="hidden" name="hall_name" value="<?php echo $row1['hall_name']; ?>" />
                                 <input type="hidden" name="to_pay" value="<?php echo $row1['total_due']; ?>" />
                                 <button type="submit" name="approve" class="btn btn-success">Approve</button>
                                 <button type="submit" name="decline" class="btn btn-danger">Decline</button>
@@ -147,7 +150,8 @@ $result = mysqli_query($con, $sql);
         if (isset($_POST['approve'])) {
             $reg = $_POST['reg'];
             $app_id = $_POST['id'];
-            $hall_name = $_POST['hall'];
+            $hall_id = $_POST['hall_id'];
+            $hall_name = $_POST['hall_name'];
             $exam = $_POST['exam'];
             $to_pay = $_POST['to_pay'];
             $sql = "UPDATE applications SET hall_approval=1 WHERE (registration_no='$reg' AND app_id=$app_id)";
@@ -171,7 +175,11 @@ $result = mysqli_query($con, $sql);
         if (isset($_POST['verify'])) {
             $reg = $_POST['reg'];
             $app_id = $_POST['id'];
-            $sql = "SELECT * FROM student WHERE (registration_no='$reg')";
+            $sql = "SELECT s.*, h.name as hall_name, d.name as department_name 
+                   FROM student s
+                   JOIN hall h ON s.hall_id = h.id
+                   JOIN department d ON s.department_id = d.id
+                   WHERE s.registration_no='$reg'";
             $result = mysqli_query($con, $sql);
             $student = mysqli_fetch_assoc($result);
 
@@ -244,11 +252,11 @@ $result = mysqli_query($con, $sql);
                     </tr>
                     <tr>
                         <th>Hall</th>
-                        <td>' . $student['hall'] . '</td>
+                        <td>' . $student['hall_name'] . '</td>
                     </tr>
                     <tr>
                         <th>Department</th>
-                        <td>' . $student['department'] . '</td>
+                        <td>' . $student['department_name'] . '</td>
                     </tr>
                     <tr>
                         <th>Date of Birth</th>

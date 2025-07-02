@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2025 at 08:39 PM
+-- Generation Time: Jul 01, 2025 at 10:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,8 +31,8 @@ CREATE TABLE `applications` (
   `app_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `registration_no` varchar(50) NOT NULL,
-  `department_name` varchar(50) NOT NULL,
-  `hall_name` varchar(50) NOT NULL,
+  `hall_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `exam` varchar(50) NOT NULL,
   `total_due` int(11) NOT NULL DEFAULT 0,
@@ -61,15 +61,6 @@ CREATE TABLE `applications` (
   `event_fee` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `applications`
---
-
-INSERT INTO `applications` (`app_id`, `name`, `registration_no`, `department_name`, `hall_name`, `date`, `exam`, `total_due`, `hall_approval`, `department_approval`, `student_fee`, `hall_rent`, `admission_fee`, `late_admission_fee`, `library_deposit`, `students_council`, `sports_fee`, `hall_students_council`, `hall_sports_fee`, `common_room_fee`, `session_charge`, `welfare_fund`, `registration_fee`, `hall_deposit`, `utensil_fee`, `contingency_fee`, `health_exam_fee`, `scout_fee`, `exam_fee`, `other_fee`, `event_fee`) VALUES
-(28, 'salman ahmed', '20213654538', 'iit', 'mowlana bhashani hall', '2025-06-30 14:56:19', '1st year 1st semester', 100, 1, 1, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(29, 'salman ahmed', '20213654538', 'iit', 'mowlana bhashani hall', '2025-06-30 15:04:17', '1st year 2nd semester', 600, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 600, 0, 0),
-(30, 'salman ahmed', '20213654538', 'iit', 'mowlana bhashani hall', '2025-06-30 16:29:26', '4th year 1st semester', 600, 3, 3, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -80,19 +71,6 @@ CREATE TABLE `application_courses` (
   `app_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `application_courses`
---
-
-INSERT INTO `application_courses` (`app_id`, `course_id`) VALUES
-(28, 87),
-(28, 88),
-(29, 96),
-(29, 97),
-(29, 99),
-(29, 102),
-(30, 138);
 
 -- --------------------------------------------------------
 
@@ -213,13 +191,44 @@ CREATE TABLE `department` (
 --
 
 INSERT INTO `department` (`id`, `name`, `password`) VALUES
-(1, 'iit', '123'),
-(2, 'cse', '123'),
-(3, 'pharmecy', '123'),
-(4, 'mathematics', '123'),
-(5, 'statistics', '123'),
-(6, 'physics', '123'),
-(7, 'chemistry', '123');
+(1, 'Institute of Information Technology', '123'),
+(2, ' Computer Science and Engineering', '123'),
+(3, 'Pharmacy', '123'),
+(4, 'Mathematics', '123'),
+(5, 'Statistics and Data Science', '123'),
+(6, 'Physics', '123'),
+(7, 'Chemistry', '123'),
+(8, 'Environmental Sciences', '123'),
+(9, ' Geological Sciences', '123'),
+(10, 'Anthropology', '123'),
+(11, 'Economics', '123'),
+(12, 'Geography and Environment', '123'),
+(13, 'Government and Politics', '123'),
+(14, 'Public Administration', '123'),
+(15, 'Urban and Regional Planning', '123'),
+(16, 'Archaeology', '123'),
+(17, 'Bangla', '123'),
+(18, 'English', '123'),
+(19, 'Drama and Dramatics', '123'),
+(20, 'Fine Arts', '123'),
+(21, 'History', '123'),
+(22, 'International Relations', '123'),
+(23, 'Journalism and Media Studies', '123'),
+(24, 'Philosophy', '123'),
+(25, 'Botany', '123'),
+(26, 'Biochemistry and Molecular Biology', '123'),
+(27, 'Biotechnology and Genetic Engineering', '123'),
+(28, 'Microbiology', '123'),
+(29, 'Public Health and Informatics', '123'),
+(30, 'Zoology', '123'),
+(31, 'Accounting and Information Systems', '123'),
+(32, 'Finance and Banking', '123'),
+(33, 'Marketing', '123'),
+(34, 'Management Studies', '123'),
+(35, 'Law and Justice', '123'),
+(36, 'Institute of Business Administration', '123'),
+(37, 'Institute of Comparative Literature and Culture', '123'),
+(38, 'Institute of Remote Sensing and GIS', '123');
 
 -- --------------------------------------------------------
 
@@ -238,13 +247,27 @@ CREATE TABLE `hall` (
 --
 
 INSERT INTO `hall` (`id`, `name`, `password`) VALUES
-(1, 'shaheed tazudiin ahmed hall', '123'),
-(2, 'sheikh rassel hall', '123'),
-(3, 'mowlana bhashani hall', '123'),
-(4, 'fazilatunnesa hall', '123'),
-(5, 'prtilata hall', '123'),
-(6, 'sheikh hasina hall', '123'),
-(7, 'khaleda zia hall', '123');
+(1, 'Shaheed Tajuddin Ahmad Hall', '123'),
+(2, 'Bijoy 24 Hall', '123'),
+(3, 'Mowlana Bhashani Hall', '123'),
+(4, 'Fajilatunnesa Hall', '123'),
+(5, 'Pritilata Hall', '123'),
+(6, 'Sheikh Hasina Hall', '123'),
+(7, 'Begum Khaleda Zia Hall', '123'),
+(8, 'Al Beruni Hall', '123'),
+(9, 'Mir Mosharrof Hossain Hall', '123'),
+(10, 'A. F. M. Kamaluddin Hall', '123'),
+(11, 'Shaheed Salam Barkat Hall', '123'),
+(12, 'Shaheed Rafiq Jabbar Hall', '123'),
+(13, 'Bangabandhu Sheikh Mujibur Rahman Hall', '123'),
+(14, 'Bishwakabi Rabindranath Tagore Hall', '123'),
+(15, 'Jatiya Kabi Kazi Nazrul Islam Hall', '123'),
+(16, 'Nawab Faizunnesa Hall', '123'),
+(17, 'Jahanara Imam Hall', '123'),
+(18, 'Sufia Kamal Hall', '123'),
+(19, 'Bangamata Begum Fazilatunnesa Mujib Hall', '123'),
+(20, 'Rokeya Hall', '123'),
+(21, 'Bir Protik Taramon Bibi Hall', '123');
 
 -- --------------------------------------------------------
 
@@ -259,9 +282,9 @@ CREATE TABLE `student` (
   `session` varchar(50) NOT NULL,
   `id` int(11) NOT NULL,
   `exam_roll` int(11) NOT NULL,
-  `registration_no` varchar(15) NOT NULL,
-  `hall` varchar(50) NOT NULL,
-  `department` varchar(50) NOT NULL,
+  `registration_no` varchar(50) NOT NULL,
+  `hall_id` int(11) NOT NULL,
+  `department_id` int(11) NOT NULL,
   `dob` varchar(50) NOT NULL,
   `sex` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -280,13 +303,6 @@ CREATE TABLE `student` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`name`, `father_name`, `mother_name`, `session`, `id`, `exam_roll`, `registration_no`, `hall`, `department`, `dob`, `sex`, `email`, `phone`, `password`, `image`, `permanent_address`, `HSC_year`, `HSC_GPA`, `HSC_group`, `HSC_board`, `SSC_year`, `SSC_GPA`, `SSC_group`, `SSC_board`) VALUES
-('salman ahmed', 'habibur rahman', 'amina', '2020-21', 2033, 210523, '20213654538', 'mowlana bhashani hall', 'iit', '2000-10-31', 'male', 'salmanahmed382.jubair@gmail.com', 1879246551, '123', '495091319_1880302462782323_7587040757179066650_n.jpg', 'Savar Bazar Road,Savar,Dhaka', '2019', 5, 'science', 'dhaka', '2017', 5, 'science', 'madrasa');
-
---
 -- Indexes for dumped tables
 --
 
@@ -294,7 +310,9 @@ INSERT INTO `student` (`name`, `father_name`, `mother_name`, `session`, `id`, `e
 -- Indexes for table `applications`
 --
 ALTER TABLE `applications`
-  ADD PRIMARY KEY (`app_id`);
+  ADD PRIMARY KEY (`app_id`),
+  ADD KEY `fk_applications_hall` (`hall_id`),
+  ADD KEY `fk_applications_department` (`department_id`);
 
 --
 -- Indexes for table `application_courses`
@@ -326,7 +344,9 @@ ALTER TABLE `hall`
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`registration_no`);
+  ADD PRIMARY KEY (`registration_no`),
+  ADD KEY `fk_student_hall` (`hall_id`),
+  ADD KEY `fk_student_department` (`department_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -336,7 +356,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `app_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `app_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -348,17 +368,24 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `hall`
 --
 ALTER TABLE `hall`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `applications`
+--
+ALTER TABLE `applications`
+  ADD CONSTRAINT `fk_applications_department` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_applications_hall` FOREIGN KEY (`hall_id`) REFERENCES `hall` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `application_courses`
@@ -372,6 +399,13 @@ ALTER TABLE `application_courses`
 --
 ALTER TABLE `courses`
   ADD CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `fk_student_department` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_student_hall` FOREIGN KEY (`hall_id`) REFERENCES `hall` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

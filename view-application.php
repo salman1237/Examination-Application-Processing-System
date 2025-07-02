@@ -19,7 +19,11 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $app_id = $_GET['id'];
 
 // Get application details
-$sql = "SELECT * FROM applications WHERE app_id = $app_id AND registration_no = '$registration_no'";
+$sql = "SELECT a.*, h.name as hall_name, d.name as department_name 
+        FROM applications a
+        JOIN hall h ON a.hall_id = h.id
+        JOIN department d ON a.department_id = d.id
+        WHERE a.app_id = $app_id AND a.registration_no = '$registration_no'";
 $result = mysqli_query($con, $sql);
 
 // Check if application exists and belongs to the logged-in student
@@ -31,7 +35,11 @@ if (mysqli_num_rows($result) == 0) {
 $application = mysqli_fetch_assoc($result);
 
 // Get student details
-$sql_student = "SELECT * FROM student WHERE registration_no = '$registration_no'";
+$sql_student = "SELECT s.*, h.name as hall_name, d.name as department_name 
+               FROM student s
+               JOIN hall h ON s.hall_id = h.id
+               JOIN department d ON s.department_id = d.id
+               WHERE s.registration_no = '$registration_no'";
 $result_student = mysqli_query($con, $sql_student);
 $student = mysqli_fetch_assoc($result_student);
 
@@ -172,11 +180,11 @@ if ($hall_approval == 2 || $department_approval == 2) {
                             </tr>
                             <tr>
                                 <th>Department</th>
-                                <td><?php echo $student['department']; ?></td>
+                                <td><?php echo $student['department_name']; ?></td>
                             </tr>
                             <tr>
                                 <th>Hall</th>
-                                <td><?php echo $student['hall']; ?></td>
+                                <td><?php echo $student['hall_name']; ?></td>
                             </tr>
                         </table>
                     </div>

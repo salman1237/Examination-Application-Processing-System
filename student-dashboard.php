@@ -2,7 +2,11 @@
 session_start();
 include('connect.php');
 $registration_no = $_SESSION['registration_no'];
-$sql = "SELECT * FROM student WHERE registration_no=$registration_no";
+$sql = "SELECT s.*, h.name as hall_name, d.name as department_name 
+        FROM student s 
+        JOIN hall h ON s.hall_id = h.id 
+        JOIN department d ON s.department_id = d.id 
+        WHERE s.registration_no=$registration_no";
 $result = mysqli_query($con, $sql);
 $student = mysqli_fetch_assoc($result);
 ?>
@@ -232,13 +236,13 @@ $student = mysqli_fetch_assoc($result);
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p><strong>Department:</strong> <?php echo $student['department']; ?></p>
+                                            <p><strong>Department:</strong> <?php echo $student['department_name']; ?></p>
                                             <p><strong>Registration No:</strong> <?php echo $student['registration_no']; ?></p>
                                             <p><strong>Student ID:</strong> <?php echo $student['id']; ?></p>
                                         </div>
                                         <div class="col-md-6">
                                             <p><strong>Exam Roll:</strong> <?php echo $student['exam_roll']; ?></p>
-                                            <p><strong>Hall:</strong> <?php echo $student['hall']; ?></p>
+                                            <p><strong>Hall:</strong> <?php echo $student['hall_name']; ?></p>
                                             <p><strong>Session:</strong> <?php echo $student['session']; ?></p>
                                         </div>
                                     </div>
@@ -294,7 +298,7 @@ $student = mysqli_fetch_assoc($result);
                                 function loadCourses() {
                                     var year = $("#year").val();
                                     var semester = $("#semester").val();
-                                    var department = "<?php echo $student['department']; ?>";
+                                    var department = "<?php echo $student['department_name']; ?>";
 
                                     if (year && semester) {
                                         // Show loading message
@@ -462,20 +466,20 @@ $student = mysqli_fetch_assoc($result);
                 // Check if $to_pay is greater than 0 before inserting
                 if ($to_pay > 0) {
                     // Insert into applications table
-                    $hall_name = $student['hall'];
-                    $department_name = $student['department'];
+                    $hall_id = $student['hall_id'];
+                    $department_id = $student['department_id'];
                     $exam = $year . " year " . $semester . " semester";
 
                     // Get selected courses from the form
                     $courses_json = isset($_POST['courses_json']) ? $_POST['courses_json'] : '';
 
                     $sql2 = "INSERT INTO applications 
-            (name, registration_no, department_name, hall_name, exam, total_due, student_fee, hall_rent, admission_fee, late_admission_fee, library_deposit, students_council, sports_fee, hall_students_council, hall_sports_fee, common_room_fee, session_charge, welfare_fund, registration_fee, hall_deposit, utensil_fee, contingency_fee, health_exam_fee, scout_fee, exam_fee, other_fee, event_fee)
+            (name, registration_no, department_id, hall_id, exam, total_due, student_fee, hall_rent, admission_fee, late_admission_fee, library_deposit, students_council, sports_fee, hall_students_council, hall_sports_fee, common_room_fee, session_charge, welfare_fund, registration_fee, hall_deposit, utensil_fee, contingency_fee, health_exam_fee, scout_fee, exam_fee, other_fee, event_fee)
           VALUES 
             ('" . $student['name'] . "', 
             '" . $student['registration_no'] . "', 
-            '" . $department_name . "', 
-            '" . $hall_name . "', 
+            $department_id, 
+            $hall_id, 
             '" . $exam . "',
             $to_pay, 
             $student_fee, 
@@ -546,7 +550,11 @@ $student = mysqli_fetch_assoc($result);
 
             }
         }
-        $sql = "SELECT * FROM applications WHERE registration_no='$registration_no'";
+        $sql = "SELECT a.*, h.name as hall_name, d.name as department_name 
+               FROM applications a
+               JOIN hall h ON a.hall_id = h.id
+               JOIN department d ON a.department_id = d.id
+               WHERE a.registration_no='$registration_no'";
         $result1 = mysqli_query($con, $sql);
         ?>
         <div id="application-status" class="section">

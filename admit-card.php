@@ -7,12 +7,16 @@ $registration_no = isset($_GET['registration_no']) ? $_GET['registration_no'] : 
 $exam = isset($_GET['exam']) ? $_GET['exam'] : '';
 
 if (!empty($registration_no)) {
-    $sql = "select * from student where registration_no='$registration_no'";
+    $sql = "SELECT s.*, h.name as hall_name, d.name as department_name 
+           FROM student s
+           JOIN hall h ON s.hall_id = h.id
+           JOIN department d ON s.department_id = d.id
+           WHERE s.registration_no='$registration_no'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
     $name = $row['name'];
-    $hall = $row['hall'];
-    $department = $row['department'];
+    $hall = $row['hall_name'];
+    $department = $row['department_name'];
     $session = $row['session'];
     $exam_roll = $row['exam_roll'];
     $class_roll = $row['id'];

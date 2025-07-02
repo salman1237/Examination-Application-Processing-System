@@ -119,6 +119,8 @@
                         <a href="hall-login.php" class="btn btn-success btn-block mb-3"><i class="fas fa-door-open"></i> Hall Login</a>
                         <!-- Department Login Button -->
                         <a href="department-login.php" class="btn btn-info btn-block mb-3"><i class="fas fa-building"></i> Department Login</a>
+                        <!-- Admin Login Button -->
+                        <a href="admin-login.php" class="btn btn-danger btn-block mb-3"><i class="fas fa-user-shield"></i> Admin Login</a>
                     </div>
                 </div>
                 <div class="footer">

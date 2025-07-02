@@ -42,9 +42,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($checkResult && mysqli_num_rows($checkResult) > 0) {
         $userExists = true;
     } else {
+        // Get hall_id from hall name
+        $hallQuery = "SELECT id FROM hall WHERE name='$hall'"; 
+        $hallResult = mysqli_query($con, $hallQuery);
+        $hallRow = mysqli_fetch_assoc($hallResult);
+        $hall_id = $hallRow['id'];
+        
+        // Get department_id from department name
+        $departmentQuery = "SELECT id FROM department WHERE name='$department'"; 
+        $departmentResult = mysqli_query($con, $departmentQuery);
+        $departmentRow = mysqli_fetch_assoc($departmentResult);
+        $department_id = $departmentRow['id'];
+        
         // Insert new user into the student table
-        $insertQuery = "INSERT INTO student (name, father_name, mother_name, session, id, registration_no, hall, department, dob, sex, email, phone, password, image, exam_roll, permanent_address, HSC_year, HSC_GPA, HSC_group, HSC_board, SSC_year, SSC_GPA, SSC_group, SSC_board)
-                        VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall', '$department', '$dob', '$sex', '$email', '$phone', '$password', '$file_name', '$exam_roll', '$permanent_address', '$HSC_year', '$HSC_GPA', '$HSC_group', '$HSC_board', '$SSC_year', '$SSC_GPA', '$SSC_group', '$SSC_board')";
+        $insertQuery = "INSERT INTO student (name, father_name, mother_name, session, id, registration_no, hall_id, department_id, dob, sex, email, phone, password, image, exam_roll, permanent_address, HSC_year, HSC_GPA, HSC_group, HSC_board, SSC_year, SSC_GPA, SSC_group, SSC_board)
+                        VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall_id', '$department_id', '$dob', '$sex', '$email', '$phone', '$password', '$file_name', '$exam_roll', '$permanent_address', '$HSC_year', '$HSC_GPA', '$HSC_group', '$HSC_board', '$SSC_year', '$SSC_GPA', '$SSC_group', '$SSC_board')";
         $insertResult = mysqli_query($con, $insertQuery);
         if ($insertResult) {
             $success = true;
@@ -189,27 +201,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="form-group">
                             <label for="hall">Hall</label>
                             <select class="form-control" id="hall" name="hall" required>
-                                <option value="mowlana bhashani hall">Mowlana Bhashani Hall</option>
-                                <option value="sheikh rassel hall">Sheikh Russel Hall</option>
-                                <option value="shaheed tazudiin ahmed hall">Shaheed Tazuddin Ahmed Hall</option>
-                                <option value="fazilatunnesa hall">Fazilatunnesa Hall</option>
-                                <option value="prtilata hall">Pritilata Hall</option>
-                                <option value="sheikh hasina hall">Sheikh Hasina Hall</option>
-                                <option value="khaleda zia hall">Khaleda Zia Hall</option>
+                                <?php
+                                include('connect.php');
+                                $sql = "SELECT * FROM hall ORDER BY name ASC";
+                                $hall_result = mysqli_query($con, $sql);
+                                while ($hall = mysqli_fetch_assoc($hall_result)) {
+                                    echo "<option value=\"" . $hall['name'] . "\">" . ucwords($hall['name']) . "</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="department">Department</label>
                             <select class="form-control" id="department" name="department" required>
-                                <option value="iit">IIT (Institute of Information Technology)</option>
-                                <option value="cse">CSE (Computer Science & Engineering)</option>
-                                <option value="pharmecy">Pharmacy</option>
-                                <option value="mathematics">Mathematics</option>
-                                <option value="statistics">Statistics</option>
-                                <option value="physics">Physics</option>
-                                <option value="chemistry">Chemistry</option>
-                                <option value="english">English</option>
-                                <option value="economics">Economics</option>
+                                <?php
+                                $sql = "SELECT * FROM department ORDER BY name ASC";
+                                $department_result = mysqli_query($con, $sql);
+                                while ($department = mysqli_fetch_assoc($department_result)) {
+                                    echo "<option value=\"" . $department['name'] . "\">" . ucwords($department['name']) . "</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                         
