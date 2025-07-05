@@ -1,6 +1,12 @@
 <?php
 session_start();
+if (!isset($_SESSION['hall_username'])) {
+    header("Location: index.php");
+    exit();
+}
+
 include('connect.php');
+include('mail_config.php');
 $id = $_SESSION['id'];
 $sql = "select * from hall where id=$id";
 $result = mysqli_query($con, $sql);
@@ -156,6 +162,23 @@ $result = mysqli_query($con, $sql);
             $to_pay = $_POST['to_pay'];
             $sql = "UPDATE applications SET hall_approval=1 WHERE (registration_no='$reg' AND app_id=$app_id)";
             $result = mysqli_query($con, $sql);
+            
+            // Get student email and name for notification
+            $studentQuery = "SELECT s.email, s.name FROM student s JOIN applications a ON s.registration_no = a.registration_no WHERE a.app_id = $app_id";
+            $studentResult = mysqli_query($con, $studentQuery);
+            if ($studentResult && mysqli_num_rows($studentResult) > 0) {
+                $studentRow = mysqli_fetch_assoc($studentResult);
+                $studentEmail = $studentRow['email'];
+                $studentName = $studentRow['name'];
+                
+                // Send approval notification email
+                if (sendStatusNotificationEmail($studentEmail, $studentName, 'hall_approved', $exam, $app_id)) {
+                    // Log email
+                    $logSql = "INSERT INTO email_logs (recipient_email, email_type, subject, status) VALUES ('$studentEmail', 'status_notification', 'Application Status Update - Hall Approval', 'sent')";
+                    mysqli_query($con, $logSql);
+                }
+            }
+            
             echo '<script>
             window.location.href="hall-dashboard.php";
                 </script>';
@@ -168,6 +191,23 @@ $result = mysqli_query($con, $sql);
             $to_pay = $_POST['to_pay'];
             $sql = "UPDATE applications SET hall_approval=2 WHERE (registration_no='$reg' AND app_id=$app_id)";
             $result = mysqli_query($con, $sql);
+            
+            // Get student email and name for notification
+            $studentQuery = "SELECT s.email, s.name FROM student s JOIN applications a ON s.registration_no = a.registration_no WHERE a.app_id = $app_id";
+            $studentResult = mysqli_query($con, $studentQuery);
+            if ($studentResult && mysqli_num_rows($studentResult) > 0) {
+                $studentRow = mysqli_fetch_assoc($studentResult);
+                $studentEmail = $studentRow['email'];
+                $studentName = $studentRow['name'];
+                
+                // Send decline notification email
+                if (sendStatusNotificationEmail($studentEmail, $studentName, 'hall_declined', $exam, $app_id)) {
+                    // Log email
+                    $logSql = "INSERT INTO email_logs (recipient_email, email_type, subject, status) VALUES ('$studentEmail', 'status_notification', 'Application Status Update - Hall Decision', 'sent')";
+                    mysqli_query($con, $logSql);
+                }
+            }
+            
             echo '<script>
             window.location.href="hall-dashboard.php";
                 </script>';

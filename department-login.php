@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +102,6 @@
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
             <?php
-            session_start();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 include ('connect.php');
 
@@ -111,10 +113,11 @@
 
                 if ($result) {
                     if (mysqli_num_rows($result) > 0) {
+                        $department = mysqli_fetch_assoc($result);
                         $_SESSION['id'] = $id;
-                        echo '<script>
-                            window.location.href="department-dashboard.php";
-                        </script>';
+                        $_SESSION['department_username'] = $department['name'];
+                        header("Location: department-dashboard.php");
+                        exit();
                     } else {
                         echo "<p style='color:red;'>Invalid ID or Password</p>";
                     }

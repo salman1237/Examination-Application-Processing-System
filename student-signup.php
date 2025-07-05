@@ -1,6 +1,10 @@
 <?php
+session_start();
+include('mail_config.php');
 $userExists = false;
 $success = false;
+$emailError = false;
+$emailDomainError = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include('connect.php');
@@ -17,6 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
     $sex = mysqli_real_escape_string($con, $_POST['sex']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
+    
+    // Validate university email domain
+    if (!validateUniversityEmail($email)) {
+        $emailDomainError = true;
+    } else {
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $exam_roll = mysqli_real_escape_string($con, $_POST['exam_roll']);
@@ -31,17 +40,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $permanent_address = mysqli_real_escape_string($con, $_POST['permanent_address']);
 
     // Handle image upload
-    $file_name = $_FILES['profile_pic']['name'];
-    $tmpname = $_FILES['profile_pic']['tmp_name'];
-    $folder = 'images/' . $file_name;
-    move_uploaded_file($tmpname, $folder);
-
-    // Check if user already exists
-    $checkQuery = "SELECT * FROM student WHERE registration_no='$registration_no'";
-    $checkResult = mysqli_query($con, $checkQuery);
-    if ($checkResult && mysqli_num_rows($checkResult) > 0) {
-        $userExists = true;
+    if(isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] == 0) {
+        $file_name = $_FILES['profile_pic']['name'];
+        $tmpname = $_FILES['profile_pic']['tmp_name'];
+        $folder = 'images/' . $file_name;
+        move_uploaded_file($tmpname, $folder);
     } else {
+        // Set default image if no image is uploaded
+        $file_name = 'default-profile.svg';
+    }
+
+        // Check if user already exists
+        $checkQuery = "SELECT * FROM student WHERE registration_no='$registration_no' OR email='$email'";
+        $checkResult = mysqli_query($con, $checkQuery);
+        if ($checkResult && mysqli_num_rows($checkResult) > 0) {
+            $row = mysqli_fetch_assoc($checkResult);
+            if ($row['email'] == $email) {
+                $emailError = true;
+            } else {
+                $userExists = true;
+            }
+        } else {
         // Get hall_id from hall name
         $hallQuery = "SELECT id FROM hall WHERE name='$hall'"; 
         $hallResult = mysqli_query($con, $hallQuery);
@@ -54,17 +73,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $departmentRow = mysqli_fetch_assoc($departmentResult);
         $department_id = $departmentRow['id'];
         
-        // Insert new user into the student table
-        $insertQuery = "INSERT INTO student (name, father_name, mother_name, session, id, registration_no, hall_id, department_id, dob, sex, email, phone, password, image, exam_roll, permanent_address, HSC_year, HSC_GPA, HSC_group, HSC_board, SSC_year, SSC_GPA, SSC_group, SSC_board)
-                        VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall_id', '$department_id', '$dob', '$sex', '$email', '$phone', '$password', '$file_name', '$exam_roll', '$permanent_address', '$HSC_year', '$HSC_GPA', '$HSC_group', '$HSC_board', '$SSC_year', '$SSC_GPA', '$SSC_group', '$SSC_board')";
-        $insertResult = mysqli_query($con, $insertQuery);
-        if ($insertResult) {
-            $success = true;
-        } else {
-            die(mysqli_error($con));
+            // Generate verification code
+            $verificationCode = generateVerificationCode();
+            $expiryTime = date('Y-m-d H:i:s', time() + VERIFICATION_CODE_EXPIRY);
+            
+            // Insert new user into the student table with email verification fields
+            $insertQuery = "INSERT INTO student (name, father_name, mother_name, session, id, registration_no, hall_id, department_id, dob, sex, email, email_verified, verification_code, verification_code_expires, phone, password, image, exam_roll, permanent_address, HSC_year, HSC_GPA, HSC_group, HSC_board, SSC_year, SSC_GPA, SSC_group, SSC_board)
+                            VALUES ('$name', '$father_name', '$mother_name', '$session', '$id', '$registration_no', '$hall_id', '$department_id', '$dob', '$sex', '$email', 0, '$verificationCode', '$expiryTime', '$phone', '$password', '$file_name', '$exam_roll', '$permanent_address', '$HSC_year', '$HSC_GPA', '$HSC_group', '$HSC_board', '$SSC_year', '$SSC_GPA', '$SSC_group', '$SSC_board')";
+            $insertResult = mysqli_query($con, $insertQuery);
+            if ($insertResult) {
+                // Send verification email
+                if (sendVerificationEmail($email, $name, $verificationCode)) {
+                    // Log email
+                    $logSql = "INSERT INTO email_logs (recipient_email, email_type, subject, status) VALUES ('$email', 'verification', 'Email Verification - Examination Application System', 'sent')";
+                    mysqli_query($con, $logSql);
+                    
+                    // Store email and name in session for verification page
+                    $_SESSION['pending_verification_email'] = $email;
+                    $_SESSION['pending_verification_name'] = $name;
+                    
+                    // Redirect to verification page
+                    header('Location: email-verification.php');
+                    exit();
+                } else {
+                    // If email sending fails, delete the user record
+                    $deleteQuery = "DELETE FROM student WHERE email='$email'";
+                    mysqli_query($con, $deleteQuery);
+                    $emailError = true;
+                }
+            } else {
+                die(mysqli_error($con));
+            }
         }
     }
-}
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +118,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Student Signup</title>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Custom CSS -->
     <style>
         body {
@@ -238,8 +283,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="email" name="email" required>
+                            <small class="form-text text-muted">
+                                <i class="fas fa-info-circle"></i> Must be a university email ending with @juniv.edu
+                            </small>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
@@ -335,7 +383,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!-- Profile Picture -->
                         <div class="form-group">
                             <label for="profile_pic">Profile Picture</label>
-                            <input type="file" class="form-control-file" id="profile_pic" name="profile_pic" accept="image/*" required>
+                            <input type="file" class="form-control-file" id="profile_pic" name="profile_pic" accept="image/*">
+                            <small class="form-text text-muted">
+                                <i class="fas fa-info-circle"></i> Optional. A default profile image will be used if none is provided.
+                            </small>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
@@ -343,11 +394,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <!-- Feedback messages -->
                         <?php if ($userExists): ?>
                             <div class="alert alert-danger mt-3" role="alert">
-                                User already exists.
+                                <i class="fas fa-exclamation-triangle"></i> A user with this registration number already exists.
+                            </div>
+                        <?php elseif ($emailError): ?>
+                            <div class="alert alert-danger mt-3" role="alert">
+                                <i class="fas fa-exclamation-triangle"></i> This email address is already registered or failed to send verification email.
+                            </div>
+                        <?php elseif ($emailDomainError): ?>
+                            <div class="alert alert-danger mt-3" role="alert">
+                                <i class="fas fa-exclamation-triangle"></i> Please use a valid university email address ending with @juniv.edu
                             </div>
                         <?php elseif ($success): ?>
                             <div class="alert alert-success mt-3" role="alert">
-                                Signed up successfully
+                                <i class="fas fa-check-circle"></i> Registration successful! Please check your email for verification.
                             </div>
                         <?php endif; ?>
 

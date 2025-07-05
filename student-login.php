@@ -7,6 +7,8 @@
     <title>Login Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background-image: linear-gradient(to right top, #4b607f, #4c8397, #63a4a3, #93c2a8, #cfddb1);
@@ -91,6 +93,18 @@
             <h2>Login</h2>
         </div>
         <div class="card-body">
+            <?php
+            session_start();
+            
+            // Display verification success message if set
+            if (isset($_SESSION['verification_success'])) {
+                echo "<div class='alert alert-success mb-3' role='alert'>
+                    <i class='fas fa-check-circle'></i> Email verification successful! You can now login to your account.
+                </div>";
+                // Clear the session variable
+                unset($_SESSION['verification_success']);
+            }
+            ?>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="form-group">
                     <label for="registration_no">Registration No</label>
@@ -103,7 +117,6 @@
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
             <?php
-            session_start();
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 include ('connect.php');
 
@@ -115,13 +128,31 @@
 
                 if ($result) {
                     if (mysqli_num_rows($result) > 0) {
-                        $_SESSION['registration_no'] = $registration_no;
-                        header("Location: student-dashboard.php");
+                        $row = mysqli_fetch_assoc($result);
+                        
+                        // Check if email is verified
+                        if ($row['email_verified'] == 1) {
+                            $_SESSION['registration_no'] = $registration_no;
+                            header("Location: student-dashboard.php");
+                            exit();
+                        } else {
+                            // Store email and name in session for verification page
+                            $_SESSION['pending_verification_email'] = $row['email'];
+                            $_SESSION['pending_verification_name'] = $row['name'];
+                            echo "<div class='alert alert-warning mt-3' role='alert'>";
+                            echo "<i class='fas fa-exclamation-triangle'></i> Your email is not verified. ";
+                            echo "<a href='email-verification.php' class='alert-link'>Click here to verify your email</a>.";
+                            echo "</div>";
+                        }
                     } else {
-                        echo "<p style='color:red;'>Invalid registration number or password</p>";
+                        echo "<div class='alert alert-danger mt-3' role='alert'>";
+                        echo "<i class='fas fa-exclamation-triangle'></i> Invalid registration number or password";
+                        echo "</div>";
                     }
                 } else {
-                    echo "<p style='color:red;'>Error: " . mysqli_error($con) . "</p>";
+                    echo "<div class='alert alert-danger mt-3' role='alert'>";
+                    echo "<i class='fas fa-exclamation-triangle'></i> Error: " . mysqli_error($con);
+                    echo "</div>";
                 }
             }
             ?>

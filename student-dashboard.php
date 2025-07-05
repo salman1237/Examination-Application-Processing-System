@@ -539,8 +539,22 @@ $student = mysqli_fetch_assoc($result);
                         } else {
                             echo '<div class="alert alert-warning">No courses selected</div>';
                         }
+                        
+                        // Include mail configuration file
+                        include 'mail_config.php';
+                        
+                        // Send application submission notification email
+                        $studentEmail = $student['email'];
+                        $studentName = $student['name'];
+                        $examName = $exam; // Using the exam variable that was set earlier
+                        sendStatusNotificationEmail($studentEmail, $studentName, 'application_submitted', $examName, $app_id);
+                        
+                        // Log the email action
+                        $logMessage = "Application submission notification email sent to: $studentEmail for application ID: $app_id";
+                        file_put_contents("email_logs/success_log.txt", date("Y-m-d H:i:s") . " - " . $logMessage . "\n", FILE_APPEND);
 
                         echo '<div class="alert alert-success" role="alert">Request successfully sent to department</div>';
+
                     } else {
                         echo '<div class="alert alert-danger" role="alert">Error: Unable to submit the request</div>';
                     }

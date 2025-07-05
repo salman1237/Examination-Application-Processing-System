@@ -124,6 +124,49 @@ $department_result = mysqli_query($con, $sql);
     </nav>
 
     <div class="container mt-4">
+        <!-- Developer Tools Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4>Developer Tools</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Email Verification Testing</h5>
+                                <div class="list-group">
+                                    <a href="test_verification_form.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-vial"></i> Test Verification Form
+                                    </a>
+                                    <a href="direct_verify_test.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Direct Verification Test
+                                    </a>
+                                    <a href="verify_test.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-code"></i> Verification Code Test
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Email System</h5>
+                                <div class="list-group">
+                                    <a href="view-email-logs.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-file-alt"></i> View Email Logs
+                                    </a>
+                                    <a href="test-email.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-envelope"></i> Test Email Sending
+                                    </a>
+                                    <a href="update_verification_code.php" class="list-group-item list-group-item-action" target="_blank">
+                                        <i class="fas fa-sync"></i> Update Verification Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="row">
             <!-- Hall Management Section -->
             <div class="col-md-6">

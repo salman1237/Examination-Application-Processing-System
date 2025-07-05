@@ -1,5 +1,6 @@
 <?php
 include("connect.php");
+include("mail_config.php");
 $val_id = urlencode($_POST['val_id']);
 $store_id = urlencode("jahan664e4ee30f771");
 $store_passwd = urlencode("jahan664e4ee30f771@ssl");
@@ -57,6 +58,22 @@ if ($code == 200 && !(curl_errno($handle))) {
         SET hall_approval = 3, department_approval = 3 
         WHERE (app_id='$id' && registration_no = '$registration_no')";
   $result = mysqli_query($con, $sql);
+  
+  // Get student email, name and application ID for notification
+  $studentQuery = "SELECT s.email, s.name FROM student s JOIN applications a ON s.registration_no = a.registration_no WHERE a.app_id = '$id'";
+  $studentResult = mysqli_query($con, $studentQuery);
+  if ($studentResult && mysqli_num_rows($studentResult) > 0) {
+      $studentRow = mysqli_fetch_assoc($studentResult);
+      $studentEmail = $studentRow['email'];
+      $studentName = $studentRow['name'];
+      
+      // Send payment confirmation email with full application details and admit card PDF
+      if (sendStatusNotificationEmail($studentEmail, $studentName, 'Paid', 'Final Examination', $id)) {
+          // Log email
+          $logSql = "INSERT INTO email_logs (recipient_email, email_type, subject, status) VALUES ('$studentEmail', 'status_notification', 'Application Status Update - Payment Confirmation', 'sent')";
+          mysqli_query($con, $logSql);
+      }
+  }
 
 } else {
 
