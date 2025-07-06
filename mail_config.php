@@ -5,13 +5,13 @@
 // SMTP Configuration
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'salmanahmed382.jubair@gmail.com'); // Replace with your email
+define('SMTP_USERNAME', 'xyz@gmail.com'); // Replace with your email
 
 // IMPORTANT: You MUST replace this with your actual App Password
 // The current authentication error is because this placeholder hasn't been replaced
-define('SMTP_PASSWORD', 'cvaozarcldbeevhm'); 
+define('SMTP_PASSWORD', 'App_password'); 
 
-define('SMTP_FROM_EMAIL', 'salmanahmed382.jubair@gmail.com'); // Replace with your email
+define('SMTP_FROM_EMAIL', 'xyz@gmail.com'); // Replace with your email
 define('SMTP_FROM_NAME', 'Examination Application Processing System');
 
 // =====================================================================
