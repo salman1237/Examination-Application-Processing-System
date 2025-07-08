@@ -1,0 +1,874 @@
+2025-07-07 02:10:42,366 - INFO - Starting Attendance Processing API...
+2025-07-07 02:10:43,771 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 02:10:43,777 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 02:10:43,786 - INFO -  * Restarting with stat
+2025-07-07 02:10:47,546 - INFO - Starting Attendance Processing API...
+2025-07-07 02:10:47,611 - WARNING -  * Debugger is active!
+2025-07-07 02:10:47,643 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 02:19:09,753 - INFO - 127.0.0.1 - - [07/Jul/2025 02:19:09] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-07 02:19:09,882 - INFO - 127.0.0.1 - - [07/Jul/2025 02:19:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-07 02:27:52,709 - INFO - 127.0.0.1 - - [07/Jul/2025 02:27:52] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-07 02:27:52,777 - INFO - 127.0.0.1 - - [07/Jul/2025 02:27:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-07 02:33:22,269 - INFO - 192.168.0.108 - - [07/Jul/2025 02:33:22] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-07 02:33:22,357 - INFO - 192.168.0.108 - - [07/Jul/2025 02:33:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-07 03:30:46,001 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 03:30:46,191 - INFO -  * Restarting with stat
+2025-07-07 03:30:50,093 - INFO - Starting Attendance Processing API...
+2025-07-07 03:30:50,138 - WARNING -  * Debugger is active!
+2025-07-07 03:30:50,144 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:33:07,275 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 03:33:07,480 - INFO -  * Restarting with stat
+2025-07-07 03:33:08,791 - INFO - Starting Attendance Processing API...
+2025-07-07 03:33:08,816 - WARNING -  * Debugger is active!
+2025-07-07 03:33:08,825 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:35:29,208 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 03:35:29,446 - INFO -  * Restarting with stat
+2025-07-07 03:35:30,657 - INFO - Starting Attendance Processing API...
+2025-07-07 03:35:30,674 - WARNING -  * Debugger is active!
+2025-07-07 03:35:30,678 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:44:01,351 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 03:44:01,594 - INFO -  * Restarting with stat
+2025-07-07 03:44:03,715 - INFO - Starting Attendance Processing API...
+2025-07-07 03:44:03,730 - WARNING -  * Debugger is active!
+2025-07-07 03:44:03,735 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:44:04,756 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 03:44:04,949 - INFO -  * Restarting with stat
+2025-07-07 03:44:06,120 - INFO - Starting Attendance Processing API...
+2025-07-07 03:44:06,136 - WARNING -  * Debugger is active!
+2025-07-07 03:44:06,141 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:48:37,213 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 03:48:37,462 - INFO -  * Restarting with stat
+2025-07-07 03:48:40,437 - INFO - Starting Attendance Processing API...
+2025-07-07 03:48:40,467 - WARNING -  * Debugger is active!
+2025-07-07 03:48:40,475 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:48:51,625 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 03:48:51,866 - INFO -  * Restarting with stat
+2025-07-07 03:48:54,058 - INFO - Starting Attendance Processing API...
+2025-07-07 03:48:54,095 - WARNING -  * Debugger is active!
+2025-07-07 03:48:54,105 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:49:26,641 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 03:49:26,949 - INFO -  * Restarting with stat
+2025-07-07 03:49:30,218 - INFO - Starting Attendance Processing API...
+2025-07-07 03:49:30,244 - WARNING -  * Debugger is active!
+2025-07-07 03:49:30,254 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:52:31,213 - INFO - Starting Attendance Processing API...
+2025-07-07 03:52:32,120 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 03:52:32,120 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 03:52:32,127 - INFO -  * Restarting with stat
+2025-07-07 03:52:33,036 - INFO - Starting Attendance Processing API...
+2025-07-07 03:52:33,052 - WARNING -  * Debugger is active!
+2025-07-07 03:52:33,056 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 03:52:56,569 - INFO - 127.0.0.1 - - [07/Jul/2025 03:52:56] "[33mGET / HTTP/1.1[0m" 404 -
+2025-07-07 04:05:43,924 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 04:05:44,097 - INFO -  * Restarting with stat
+2025-07-07 04:05:47,119 - INFO - Starting Attendance Processing API...
+2025-07-07 04:05:47,155 - WARNING -  * Debugger is active!
+2025-07-07 04:05:47,163 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 04:07:40,642 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 04:07:40,930 - INFO -  * Restarting with stat
+2025-07-07 04:07:45,458 - INFO - Starting Attendance Processing API...
+2025-07-07 04:07:45,489 - WARNING -  * Debugger is active!
+2025-07-07 04:07:45,501 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 04:10:04,242 - INFO - Starting Attendance Processing API...
+2025-07-07 04:10:05,187 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 04:10:05,188 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 04:10:05,196 - INFO -  * Restarting with stat
+2025-07-07 04:10:06,674 - INFO - Starting Attendance Processing API...
+2025-07-07 04:10:06,705 - WARNING -  * Debugger is active!
+2025-07-07 04:10:06,715 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 04:10:34,768 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751839834_attendance_sheet.xlsx
+2025-07-07 04:10:35,496 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 04:10:35,497 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 04:10:35,515 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 04:10:35,524 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 04:10:35,534 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 04:10:35,547 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 04:10:35,548 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 04:10:35,579 - INFO - Processed 65 records with 0 errors
+2025-07-07 04:10:35,770 - INFO - Saved 1 records, 64 failed
+2025-07-07 04:10:35,773 - INFO - 127.0.0.1 - - [07/Jul/2025 04:10:35] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:07:05,450 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843225_attendance_sheet.xlsx
+2025-07-07 05:07:06,296 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:07:06,296 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:07:06,303 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:07:06,311 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:07:06,323 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:07:06,332 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:07:06,333 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:07:06,356 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:07:06,548 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:07:06,550 - INFO - 127.0.0.1 - - [07/Jul/2025 05:07:06] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:08:07,709 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:08:07,799 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:08:07,800 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:08:07,807 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:08:07,813 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:08:07,823 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:08:07,831 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:08:07,832 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:08:07,860 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:08:07,939 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:08:07,940 - INFO - 127.0.0.1 - - [07/Jul/2025 05:08:07] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:15:03,299 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:15:03,411 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:15:03,412 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:15:03,423 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:15:03,430 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:15:03,439 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:15:03,448 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:15:03,449 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:15:03,479 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:15:03,565 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:15:03,566 - INFO - 127.0.0.1 - - [07/Jul/2025 05:15:03] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:15:15,990 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:15:16,084 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:15:16,085 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:15:16,096 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:15:16,103 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:15:16,113 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:15:16,121 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:15:16,121 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:15:16,142 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:15:16,210 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:15:16,212 - INFO - 127.0.0.1 - - [07/Jul/2025 05:15:16] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:15:38,280 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:15:38,374 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:15:38,375 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:15:38,385 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:15:38,391 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:15:38,397 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:15:38,403 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:15:38,404 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:15:38,425 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:15:38,510 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:15:38,511 - INFO - 127.0.0.1 - - [07/Jul/2025 05:15:38] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:18:16,134 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:18:16,270 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:18:16,271 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:18:16,295 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:18:16,302 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:18:16,312 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:18:16,324 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:18:16,325 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:18:16,369 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:18:16,473 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:18:16,475 - INFO - 127.0.0.1 - - [07/Jul/2025 05:18:16] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:18:34,326 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:18:34,477 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:18:34,477 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:18:34,491 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:18:34,497 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:18:34,504 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:18:34,513 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:18:34,514 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:18:34,544 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:18:34,630 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:18:34,632 - INFO - 127.0.0.1 - - [07/Jul/2025 05:18:34] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:18:34,914 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:18:35,038 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:18:35,039 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:18:35,060 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:18:35,074 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:18:35,090 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:18:35,129 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:18:35,132 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:18:35,189 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:18:35,284 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:18:35,285 - INFO - 127.0.0.1 - - [07/Jul/2025 05:18:35] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:18:44,108 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:18:44,196 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:18:44,197 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:18:44,207 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:18:44,212 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:18:44,219 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:18:44,225 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:18:44,225 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:18:44,250 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:18:44,331 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:18:44,333 - INFO - 127.0.0.1 - - [07/Jul/2025 05:18:44] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:18:45,736 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751843287_attendance_sheet.xlsx
+2025-07-07 05:18:45,876 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:18:45,877 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:18:45,888 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:18:45,892 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:18:45,901 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:18:45,907 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:18:45,908 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:18:45,935 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:18:46,023 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:18:46,025 - INFO - 127.0.0.1 - - [07/Jul/2025 05:18:46] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 05:41:20,999 - INFO - Starting Attendance Processing API...
+2025-07-07 05:41:21,977 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 05:41:21,978 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 05:41:21,985 - INFO -  * Restarting with stat
+2025-07-07 05:41:23,333 - INFO - Starting Attendance Processing API...
+2025-07-07 05:41:23,354 - WARNING -  * Debugger is active!
+2025-07-07 05:41:23,360 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 05:42:26,992 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751845346_attendance_sheet.xlsx
+2025-07-07 05:42:27,708 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 05:42:27,709 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 05:42:27,720 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 05:42:27,728 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 05:42:27,736 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 05:42:27,744 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 05:42:27,745 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 05:42:27,774 - INFO - Processed 65 records with 0 errors
+2025-07-07 05:42:27,946 - INFO - Saved 1 records, 64 failed
+2025-07-07 05:42:27,948 - INFO - 127.0.0.1 - - [07/Jul/2025 05:42:27] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 10:53:40,608 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751864020_attendance_sheet.xlsx
+2025-07-07 10:53:40,768 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 10:53:40,769 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 10:53:40,788 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 10:53:40,795 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 10:53:40,806 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 10:53:40,817 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 10:53:40,819 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 10:53:40,868 - INFO - Processed 65 records with 0 errors
+2025-07-07 10:53:40,987 - INFO - Saved 2 records, 63 failed
+2025-07-07 10:53:40,989 - INFO - 127.0.0.1 - - [07/Jul/2025 10:53:40] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 12:19:01,703 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751869141_attendance_sheet.xlsx
+2025-07-07 12:19:01,764 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:19:01,764 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:19:01,770 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:19:01,774 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:19:01,778 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:19:01,781 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:19:01,782 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:19:01,793 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:19:01,807 - ERROR - Database error: Unread result found
+2025-07-07 12:19:01,809 - INFO - 127.0.0.1 - - [07/Jul/2025 12:19:01] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-07 12:19:56,692 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751869196_attendance_sheet.xlsx
+2025-07-07 12:19:56,769 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:19:56,770 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:19:56,776 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:19:56,779 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:19:56,783 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:19:56,786 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:19:56,787 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:19:56,798 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:19:56,813 - ERROR - Database error: Unread result found
+2025-07-07 12:19:56,814 - INFO - 127.0.0.1 - - [07/Jul/2025 12:19:56] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-07 12:20:41,345 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751869241_attendance_sheet.xlsx
+2025-07-07 12:20:41,391 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:20:41,391 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:20:41,398 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:20:41,401 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:20:41,404 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:20:41,409 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:20:41,410 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:20:41,420 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:20:41,436 - ERROR - Database error: Unread result found
+2025-07-07 12:20:41,436 - INFO - 127.0.0.1 - - [07/Jul/2025 12:20:41] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-07 12:21:18,451 - INFO - Starting Attendance Processing API...
+2025-07-07 12:21:19,441 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.6:5000
+2025-07-07 12:21:19,442 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 12:21:19,447 - INFO -  * Restarting with stat
+2025-07-07 12:21:20,339 - INFO - Starting Attendance Processing API...
+2025-07-07 12:21:20,356 - WARNING -  * Debugger is active!
+2025-07-07 12:21:20,362 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 12:22:00,265 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751869320_attendance_sheet.xlsx
+2025-07-07 12:22:00,642 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:22:00,642 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:22:00,648 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:22:00,652 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:22:00,655 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:22:00,660 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:22:00,660 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:22:00,670 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:22:00,733 - ERROR - Database error: Unread result found
+2025-07-07 12:22:00,735 - INFO - 127.0.0.1 - - [07/Jul/2025 12:22:00] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-07 12:24:05,172 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751869444_attendance_sheet.xlsx
+2025-07-07 12:24:05,225 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:24:05,225 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:24:05,232 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:24:05,235 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:24:05,238 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:24:05,242 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:24:05,242 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:24:05,253 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:24:05,266 - ERROR - Database error: Unread result found
+2025-07-07 12:24:05,267 - INFO - 127.0.0.1 - - [07/Jul/2025 12:24:05] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-07 12:29:27,782 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 12:29:28,818 - INFO -  * Restarting with stat
+2025-07-07 12:29:34,632 - INFO - Starting Attendance Processing API...
+2025-07-07 12:29:34,661 - WARNING -  * Debugger is active!
+2025-07-07 12:29:34,672 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 12:32:40,322 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 12:32:40,704 - INFO -  * Restarting with stat
+2025-07-07 12:32:45,170 - INFO - Starting Attendance Processing API...
+2025-07-07 12:32:45,190 - WARNING -  * Debugger is active!
+2025-07-07 12:32:45,196 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 12:36:28,833 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751870188_attendance_sheet.xlsx
+2025-07-07 12:36:29,138 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:36:29,138 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:36:29,144 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:36:29,148 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:36:29,152 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:36:29,156 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:36:29,156 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:36:29,169 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:36:29,246 - INFO - Saved 3 records, 62 failed
+2025-07-07 12:36:29,247 - INFO - 127.0.0.1 - - [07/Jul/2025 12:36:29] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 12:38:24,411 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751870304_attendance_sheet.xlsx
+2025-07-07 12:38:24,453 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 12:38:24,453 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 12:38:24,459 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 12:38:24,462 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 12:38:24,466 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 12:38:24,470 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 12:38:24,470 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 12:38:24,480 - INFO - Processed 65 records with 0 errors
+2025-07-07 12:38:24,510 - INFO - Saved 3 records, 62 failed
+2025-07-07 12:38:24,511 - INFO - 127.0.0.1 - - [07/Jul/2025 12:38:24] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 14:53:38,432 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751878418_attendance_sheet.xlsx
+2025-07-07 14:53:38,575 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 14:53:38,575 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 14:53:38,595 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 14:53:38,605 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 14:53:38,617 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 14:53:38,627 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 14:53:38,628 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 14:53:38,656 - INFO - Processed 65 records with 0 errors
+2025-07-07 14:53:38,737 - INFO - Saved 3 records, 62 failed
+2025-07-07 14:53:38,739 - INFO - 127.0.0.1 - - [07/Jul/2025 14:53:38] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 19:49:37,134 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_template.py', reloading
+2025-07-07 19:49:38,402 - INFO -  * Restarting with stat
+2025-07-07 19:49:42,392 - INFO - Starting Attendance Processing API...
+2025-07-07 19:49:42,428 - WARNING -  * Debugger is active!
+2025-07-07 19:49:42,441 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 19:50:22,194 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 19:50:23,186 - INFO -  * Restarting with stat
+2025-07-07 19:50:29,440 - INFO - Starting Attendance Processing API...
+2025-07-07 19:50:29,470 - WARNING -  * Debugger is active!
+2025-07-07 19:50:29,483 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:12:54,713 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:12:54,999 - INFO -  * Restarting with stat
+2025-07-07 20:12:59,112 - INFO - Starting Attendance Processing API...
+2025-07-07 20:12:59,171 - WARNING -  * Debugger is active!
+2025-07-07 20:12:59,188 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:13:18,557 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:13:18,916 - INFO -  * Restarting with stat
+2025-07-07 20:13:23,116 - INFO - Starting Attendance Processing API...
+2025-07-07 20:13:23,171 - WARNING -  * Debugger is active!
+2025-07-07 20:13:23,191 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:13:43,521 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:13:43,784 - INFO -  * Restarting with stat
+2025-07-07 20:13:47,107 - INFO - Starting Attendance Processing API...
+2025-07-07 20:13:47,145 - WARNING -  * Debugger is active!
+2025-07-07 20:13:47,153 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:13:56,306 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:13:56,664 - INFO -  * Restarting with stat
+2025-07-07 20:14:00,590 - INFO - Starting Attendance Processing API...
+2025-07-07 20:14:00,639 - WARNING -  * Debugger is active!
+2025-07-07 20:14:00,657 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:14:05,772 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:14:06,105 - INFO -  * Restarting with stat
+2025-07-07 20:14:09,202 - INFO - Starting Attendance Processing API...
+2025-07-07 20:14:09,271 - WARNING -  * Debugger is active!
+2025-07-07 20:14:09,289 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:14:15,442 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:14:15,762 - INFO -  * Restarting with stat
+2025-07-07 20:14:19,788 - INFO - Starting Attendance Processing API...
+2025-07-07 20:14:19,831 - WARNING -  * Debugger is active!
+2025-07-07 20:14:19,845 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:14:24,961 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:14:25,317 - INFO -  * Restarting with stat
+2025-07-07 20:14:29,153 - INFO - Starting Attendance Processing API...
+2025-07-07 20:14:29,184 - WARNING -  * Debugger is active!
+2025-07-07 20:14:29,196 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:14:42,443 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:14:42,712 - INFO -  * Restarting with stat
+2025-07-07 20:14:46,400 - INFO - Starting Attendance Processing API...
+2025-07-07 20:14:46,454 - WARNING -  * Debugger is active!
+2025-07-07 20:14:46,475 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:15:04,861 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:15:05,135 - INFO -  * Restarting with stat
+2025-07-07 20:15:08,732 - INFO - Starting Attendance Processing API...
+2025-07-07 20:15:08,778 - WARNING -  * Debugger is active!
+2025-07-07 20:15:08,792 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:15:16,915 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:15:17,174 - INFO -  * Restarting with stat
+2025-07-07 20:15:21,151 - INFO - Starting Attendance Processing API...
+2025-07-07 20:15:21,218 - WARNING -  * Debugger is active!
+2025-07-07 20:15:21,239 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:15:54,678 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:15:54,920 - INFO -  * Restarting with stat
+2025-07-07 20:15:58,537 - INFO - Starting Attendance Processing API...
+2025-07-07 20:15:58,589 - WARNING -  * Debugger is active!
+2025-07-07 20:15:58,613 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:16:04,832 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:16:05,167 - INFO -  * Restarting with stat
+2025-07-07 20:16:08,265 - INFO - Starting Attendance Processing API...
+2025-07-07 20:16:08,329 - WARNING -  * Debugger is active!
+2025-07-07 20:16:08,364 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:16:26,711 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:16:26,995 - INFO -  * Restarting with stat
+2025-07-07 20:16:31,449 - INFO - Starting Attendance Processing API...
+2025-07-07 20:16:31,487 - WARNING -  * Debugger is active!
+2025-07-07 20:16:31,500 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:16:43,725 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:16:44,125 - INFO -  * Restarting with stat
+2025-07-07 20:16:48,201 - INFO - Starting Attendance Processing API...
+2025-07-07 20:16:48,337 - WARNING -  * Debugger is active!
+2025-07-07 20:16:48,355 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:16:59,507 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:16:59,726 - INFO -  * Restarting with stat
+2025-07-07 20:17:03,586 - INFO - Starting Attendance Processing API...
+2025-07-07 20:17:03,808 - WARNING -  * Debugger is active!
+2025-07-07 20:17:03,865 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:17:18,121 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:17:18,425 - INFO -  * Restarting with stat
+2025-07-07 20:17:23,777 - INFO - Starting Attendance Processing API...
+2025-07-07 20:17:23,842 - WARNING -  * Debugger is active!
+2025-07-07 20:17:23,857 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:17:42,142 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:17:42,381 - INFO -  * Restarting with stat
+2025-07-07 20:17:45,875 - INFO - Starting Attendance Processing API...
+2025-07-07 20:17:45,919 - WARNING -  * Debugger is active!
+2025-07-07 20:17:45,936 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:17:56,094 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:17:56,361 - INFO -  * Restarting with stat
+2025-07-07 20:18:00,053 - INFO - Starting Attendance Processing API...
+2025-07-07 20:18:00,096 - WARNING -  * Debugger is active!
+2025-07-07 20:18:00,116 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:18:14,357 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:18:14,637 - INFO -  * Restarting with stat
+2025-07-07 20:18:18,858 - INFO - Starting Attendance Processing API...
+2025-07-07 20:18:18,891 - WARNING -  * Debugger is active!
+2025-07-07 20:18:18,901 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:18:38,336 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:18:38,689 - INFO -  * Restarting with stat
+2025-07-07 20:18:45,980 - INFO - Starting Attendance Processing API...
+2025-07-07 20:18:46,065 - WARNING -  * Debugger is active!
+2025-07-07 20:18:46,094 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:18:53,306 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:18:53,669 - INFO -  * Restarting with stat
+2025-07-07 20:18:57,201 - INFO - Starting Attendance Processing API...
+2025-07-07 20:18:57,243 - WARNING -  * Debugger is active!
+2025-07-07 20:18:57,262 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:19:20,626 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:19:21,232 - INFO -  * Restarting with stat
+2025-07-07 20:19:26,770 - INFO - Starting Attendance Processing API...
+2025-07-07 20:19:26,807 - WARNING -  * Debugger is active!
+2025-07-07 20:19:26,823 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:19:32,010 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:19:32,498 - INFO -  * Restarting with stat
+2025-07-07 20:19:39,125 - INFO - Starting Attendance Processing API...
+2025-07-07 20:19:39,158 - WARNING -  * Debugger is active!
+2025-07-07 20:19:39,172 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:19:46,305 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:19:46,762 - INFO -  * Restarting with stat
+2025-07-07 20:19:51,587 - INFO - Starting Attendance Processing API...
+2025-07-07 20:19:51,629 - WARNING -  * Debugger is active!
+2025-07-07 20:19:51,645 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:19:58,874 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:19:59,136 - INFO -  * Restarting with stat
+2025-07-07 20:20:04,338 - INFO - Starting Attendance Processing API...
+2025-07-07 20:20:04,391 - WARNING -  * Debugger is active!
+2025-07-07 20:20:04,415 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:20:57,217 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:20:57,546 - INFO -  * Restarting with stat
+2025-07-07 20:21:06,614 - INFO - Starting Attendance Processing API...
+2025-07-07 20:21:06,703 - WARNING -  * Debugger is active!
+2025-07-07 20:21:06,737 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:38:39,898 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:38:40,449 - INFO -  * Restarting with stat
+2025-07-07 20:38:44,969 - INFO - Starting Attendance Processing API...
+2025-07-07 20:38:45,040 - WARNING -  * Debugger is active!
+2025-07-07 20:38:45,058 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:44:52,337 - INFO - Reading Excel file: uploads/attendance/1751878418_attendance_sheet.xlsx
+2025-07-07 20:44:53,013 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:53,020 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:53,036 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:53,050 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:53,058 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:53,068 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:53,068 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:53,070 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:53,073 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:53,074 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:53,106 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:53,110 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:53,132 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:53,156 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:53,191 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:53,212 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:53,214 - INFO - Reading Excel file: uploads/attendance/1751870304_attendance_sheet.xlsx
+2025-07-07 20:44:53,286 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:53,293 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:53,302 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:53,310 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:53,318 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:53,326 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:53,326 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:53,327 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:53,332 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:53,333 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:53,362 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:53,367 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:53,388 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:53,408 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:53,441 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:53,461 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:53,462 - INFO - Reading Excel file: uploads/attendance/1751870188_attendance_sheet.xlsx
+2025-07-07 20:44:53,542 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:53,551 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:53,563 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:53,571 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:53,581 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:53,589 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:53,590 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:53,593 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:53,594 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:53,601 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:53,628 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:53,633 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:53,662 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:53,690 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:53,723 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:53,731 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:53,733 - INFO - Reading Excel file: uploads/attendance/1751864020_attendance_sheet.xlsx
+2025-07-07 20:44:53,809 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:53,818 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:53,830 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:53,838 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:53,846 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:53,854 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:53,855 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:53,856 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:53,857 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:53,861 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:53,894 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:53,900 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:53,920 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:53,940 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:53,974 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:53,994 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:53,994 - INFO - Reading Excel file: uploads/attendance/1751845346_attendance_sheet.xlsx
+2025-07-07 20:44:54,072 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:54,080 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:54,089 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:54,099 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:54,106 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:54,115 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:54,116 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:54,117 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:54,118 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:54,119 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:54,152 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:54,157 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:54,183 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:54,203 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:54,236 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:54,257 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:54,258 - INFO - Reading Excel file: uploads/attendance/1751843287_attendance_sheet.xlsx
+2025-07-07 20:44:54,339 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:54,348 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:54,358 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:54,369 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:54,375 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:54,383 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:54,383 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:54,384 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:54,385 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:54,386 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:54,420 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:54,424 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:54,445 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:54,465 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:54,499 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:54,518 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:54,518 - INFO - Reading Excel file: uploads/attendance/1751843225_attendance_sheet.xlsx
+2025-07-07 20:44:54,603 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:54,611 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:54,622 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:54,632 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:54,639 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:54,652 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:54,652 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:54,654 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:54,655 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:54,656 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:54,696 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:54,700 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:54,720 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:54,738 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:54,774 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:54,783 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:54,784 - INFO - Reading Excel file: uploads/attendance/1751839834_attendance_sheet.xlsx
+2025-07-07 20:44:54,868 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 20:44:54,874 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 20:44:54,886 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 20:44:54,898 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 20:44:54,907 - INFO - Mapped 'Student ID' to 'department' with confidence 0.71
+2025-07-07 20:44:54,917 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 20:44:54,918 - WARNING - Session column not found in Excel. Using provided session: 2020-21
+2025-07-07 20:44:54,919 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 20:44:54,921 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 20:44:54,922 - INFO - Column mapping: {'registration_no': 'Student ID', 'student_name': 'Student ID', 'total_classes': 'Total Classes', 'attended_classes': 'Attended Classes', 'department': 'Student ID', 'class_columns': ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']}
+2025-07-07 20:44:54,952 - INFO - Processed 65 records with 0 errors
+2025-07-07 20:44:54,956 - WARNING - Student with ID 2001 found in system but not in specified department/session
+2025-07-07 20:44:54,979 - WARNING - Student with ID 2018 found in system but not in specified department/session
+2025-07-07 20:44:54,998 - WARNING - Student with ID 2033 found in system but not in specified department/session
+2025-07-07 20:44:55,034 - WARNING - Student with ID 2061 found in system but not in specified department/session
+2025-07-07 20:44:55,053 - INFO - Saved 0 records, 65 failed
+2025-07-07 20:44:55,055 - INFO - 127.0.0.1 - - [07/Jul/2025 20:44:55] "POST /reprocess_attendance HTTP/1.1" 200 -
+2025-07-07 20:47:55,395 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:47:55,747 - INFO -  * Restarting with stat
+2025-07-07 20:47:59,184 - INFO - Starting Attendance Processing API...
+2025-07-07 20:47:59,226 - WARNING -  * Debugger is active!
+2025-07-07 20:47:59,236 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:48:11,550 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:48:11,926 - INFO -  * Restarting with stat
+2025-07-07 20:48:15,112 - INFO - Starting Attendance Processing API...
+2025-07-07 20:48:15,142 - WARNING -  * Debugger is active!
+2025-07-07 20:48:15,160 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:48:32,433 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:48:32,672 - INFO -  * Restarting with stat
+2025-07-07 20:48:36,149 - INFO - Starting Attendance Processing API...
+2025-07-07 20:48:36,186 - WARNING -  * Debugger is active!
+2025-07-07 20:48:36,202 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:49:01,567 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:49:01,877 - INFO -  * Restarting with stat
+2025-07-07 20:49:08,114 - INFO - Starting Attendance Processing API...
+2025-07-07 20:49:08,131 - WARNING -  * Debugger is active!
+2025-07-07 20:49:08,138 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:49:51,414 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:49:51,637 - INFO -  * Restarting with stat
+2025-07-07 20:49:53,010 - INFO - Starting Attendance Processing API...
+2025-07-07 20:49:53,037 - WARNING -  * Debugger is active!
+2025-07-07 20:49:53,043 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:50:15,217 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:50:15,484 - INFO -  * Restarting with stat
+2025-07-07 20:50:17,906 - INFO - Starting Attendance Processing API...
+2025-07-07 20:50:17,933 - WARNING -  * Debugger is active!
+2025-07-07 20:50:17,940 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:50:27,025 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:50:27,593 - INFO -  * Restarting with stat
+2025-07-07 20:50:29,775 - INFO - Starting Attendance Processing API...
+2025-07-07 20:50:29,798 - WARNING -  * Debugger is active!
+2025-07-07 20:50:29,806 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:51:05,127 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:51:05,502 - INFO -  * Restarting with stat
+2025-07-07 20:51:07,171 - INFO - Starting Attendance Processing API...
+2025-07-07 20:51:07,219 - WARNING -  * Debugger is active!
+2025-07-07 20:51:07,288 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:51:29,516 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:51:29,898 - INFO -  * Restarting with stat
+2025-07-07 20:51:32,244 - INFO - Starting Attendance Processing API...
+2025-07-07 20:51:32,274 - WARNING -  * Debugger is active!
+2025-07-07 20:51:32,281 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:51:38,354 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:51:38,556 - INFO -  * Restarting with stat
+2025-07-07 20:51:41,242 - INFO - Starting Attendance Processing API...
+2025-07-07 20:51:41,284 - WARNING -  * Debugger is active!
+2025-07-07 20:51:41,294 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:55:12,155 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:55:12,430 - INFO -  * Restarting with stat
+2025-07-07 20:55:15,932 - INFO - Starting Attendance Processing API...
+2025-07-07 20:55:15,988 - WARNING -  * Debugger is active!
+2025-07-07 20:55:16,001 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:55:58,612 - INFO - Starting Attendance Processing API...
+2025-07-07 20:55:59,567 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 20:55:59,568 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 20:55:59,572 - INFO -  * Restarting with stat
+2025-07-07 20:56:01,999 - INFO - Starting Attendance Processing API...
+2025-07-07 20:56:02,052 - WARNING -  * Debugger is active!
+2025-07-07 20:56:02,069 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:58:53,594 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:58:54,091 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 20:58:54,102 - INFO -  * Restarting with stat
+2025-07-07 20:58:54,456 - INFO -  * Restarting with stat
+2025-07-07 20:58:55,464 - INFO - Starting Attendance Processing API...
+2025-07-07 20:58:55,479 - WARNING -  * Debugger is active!
+2025-07-07 20:58:55,484 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 20:58:55,542 - INFO - Starting Attendance Processing API...
+2025-07-07 20:58:55,566 - WARNING -  * Debugger is active!
+2025-07-07 20:58:55,573 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:00:08,433 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751900408_attendance_sheet.xlsx
+2025-07-07 21:00:08,721 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-07 21:00:08,721 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-07 21:00:08,727 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-07 21:00:08,730 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-07 21:00:08,734 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-07 21:00:08,738 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-07 21:00:08,738 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-07 21:00:08,748 - INFO - Processed 65 records with 0 errors
+2025-07-07 21:00:08,835 - INFO - Saved 4 records, 61 failed
+2025-07-07 21:00:08,836 - INFO - 127.0.0.1 - - [07/Jul/2025 21:00:08] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-07 21:38:57,535 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:38:57,537 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:38:57,736 - INFO -  * Restarting with stat
+2025-07-07 21:38:57,760 - INFO -  * Restarting with stat
+2025-07-07 21:38:58,779 - INFO - Starting Attendance Processing API...
+2025-07-07 21:38:58,794 - WARNING -  * Debugger is active!
+2025-07-07 21:38:58,794 - WARNING -  * Debugger is active!
+2025-07-07 21:38:58,799 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:38:58,799 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:01,840 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:01,841 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:02,073 - INFO -  * Restarting with stat
+2025-07-07 21:39:02,085 - INFO -  * Restarting with stat
+2025-07-07 21:39:03,077 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:03,095 - WARNING -  * Debugger is active!
+2025-07-07 21:39:03,100 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:03,103 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:03,118 - WARNING -  * Debugger is active!
+2025-07-07 21:39:03,125 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:04,128 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:04,147 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:04,373 - INFO -  * Restarting with stat
+2025-07-07 21:39:04,377 - INFO -  * Restarting with stat
+2025-07-07 21:39:05,402 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:05,403 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:05,416 - WARNING -  * Debugger is active!
+2025-07-07 21:39:05,418 - WARNING -  * Debugger is active!
+2025-07-07 21:39:05,421 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:05,423 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:08,470 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:08,474 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-07 21:39:08,610 - INFO -  * Restarting with stat
+2025-07-07 21:39:08,616 - INFO -  * Restarting with stat
+2025-07-07 21:39:09,513 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:09,516 - INFO - Starting Attendance Processing API...
+2025-07-07 21:39:09,531 - WARNING -  * Debugger is active!
+2025-07-07 21:39:09,537 - WARNING -  * Debugger is active!
+2025-07-07 21:39:09,538 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 21:39:09,545 - INFO -  * Debugger PIN: 927-015-625
+2025-07-07 23:39:40,883 - INFO - Starting Attendance Processing API...
+2025-07-07 23:39:41,834 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-07 23:39:41,834 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-07 23:39:41,837 - INFO -  * Restarting with stat
+2025-07-07 23:39:42,641 - INFO - Starting Attendance Processing API...
+2025-07-07 23:39:42,656 - WARNING -  * Debugger is active!
+2025-07-07 23:39:42,662 - INFO -  * Debugger PIN: 927-015-625
+2025-07-08 00:01:03,010 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1751911262_attendance_sheet.xlsx
+2025-07-08 00:01:03,770 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-08 00:01:03,770 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-08 00:01:03,775 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-08 00:01:03,779 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-08 00:01:03,783 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-08 00:01:03,786 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-08 00:01:03,787 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-08 00:01:03,801 - INFO - Processed 65 records with 0 errors
+2025-07-08 00:01:03,926 - ERROR - Database error: Unread result found
+2025-07-08 00:01:03,928 - INFO - 127.0.0.1 - - [08/Jul/2025 00:01:03] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-09 02:24:09,173 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:24:09,276 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:24:10,449 - INFO -  * Restarting with stat
+2025-07-09 02:24:20,408 - INFO - Starting Attendance Processing API...
+2025-07-09 02:24:20,505 - WARNING -  * Debugger is active!
+2025-07-09 02:24:20,514 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:25:02,808 - INFO -  * Restarting with stat
+2025-07-09 02:25:04,666 - INFO - Starting Attendance Processing API...
+2025-07-09 02:25:04,717 - WARNING -  * Debugger is active!
+2025-07-09 02:25:04,735 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:25:19,603 - INFO - Starting Attendance Processing API...
+2025-07-09 02:25:20,564 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-09 02:25:20,565 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-09 02:25:20,578 - INFO -  * Restarting with stat
+2025-07-09 02:25:22,193 - INFO - Starting Attendance Processing API...
+2025-07-09 02:25:22,237 - WARNING -  * Debugger is active!
+2025-07-09 02:25:22,260 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:32:52,381 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1752006772_attendance_sheet.xlsx
+2025-07-09 02:32:53,288 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-09 02:32:53,288 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-09 02:32:53,309 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-09 02:32:53,320 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-09 02:32:53,333 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-09 02:32:53,358 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-09 02:32:53,360 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-09 02:32:53,389 - INFO - Processed 65 records with 0 errors
+2025-07-09 02:32:53,390 - ERROR - API error: name 'save_attendance_to_db' is not defined
+2025-07-09 02:32:53,392 - INFO - 127.0.0.1 - - [09/Jul/2025 02:32:53] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-09 02:33:51,917 - INFO - Starting Attendance Processing API...
+2025-07-09 02:33:52,892 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-09 02:33:52,893 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-09 02:33:52,901 - INFO -  * Restarting with stat
+2025-07-09 02:33:55,141 - INFO - Starting Attendance Processing API...
+2025-07-09 02:33:55,179 - WARNING -  * Debugger is active!
+2025-07-09 02:33:55,196 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:35:01,738 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1752006901_attendance_sheet.xlsx
+2025-07-09 02:35:01,899 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-09 02:35:01,901 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-09 02:35:01,929 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-09 02:35:01,946 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-09 02:35:01,970 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-09 02:35:01,987 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-09 02:35:01,989 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-09 02:35:02,049 - INFO - Processed 65 records with 0 errors
+2025-07-09 02:35:02,051 - ERROR - API error: name 'save_attendance_to_db' is not defined
+2025-07-09 02:35:02,053 - INFO - 127.0.0.1 - - [09/Jul/2025 02:35:02] "[35m[1mPOST /process_attendance HTTP/1.1[0m" 500 -
+2025-07-09 02:36:53,914 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:36:54,208 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:36:54,212 - INFO -  * Restarting with stat
+2025-07-09 02:36:54,595 - INFO -  * Restarting with stat
+2025-07-09 02:36:57,646 - INFO - Starting Attendance Processing API...
+2025-07-09 02:36:57,721 - WARNING -  * Debugger is active!
+2025-07-09 02:36:57,757 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:36:57,837 - INFO - Starting Attendance Processing API...
+2025-07-09 02:36:57,929 - WARNING -  * Debugger is active!
+2025-07-09 02:36:57,942 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:42:11,330 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:42:11,607 - INFO -  * Detected change in 'C:\\xampp\\htdocs\\Examination-Application-Processing-System\\attendance_api.py', reloading
+2025-07-09 02:42:11,709 - INFO -  * Restarting with stat
+2025-07-09 02:42:11,949 - INFO -  * Restarting with stat
+2025-07-09 02:42:53,500 - INFO - Starting Attendance Processing API...
+2025-07-09 02:42:54,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.108:5000
+2025-07-09 02:42:54,478 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-09 02:42:54,485 - INFO -  * Restarting with stat
+2025-07-09 02:42:56,109 - INFO - Starting Attendance Processing API...
+2025-07-09 02:42:56,148 - WARNING -  * Debugger is active!
+2025-07-09 02:42:56,165 - INFO -  * Debugger PIN: 927-015-625
+2025-07-09 02:44:17,585 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1752007457_attendance_sheet.xlsx
+2025-07-09 02:44:18,385 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-09 02:44:18,386 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-09 02:44:18,401 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-09 02:44:18,408 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-09 02:44:18,418 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-09 02:44:18,429 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-09 02:44:18,430 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-09 02:44:18,463 - INFO - Processed 65 records with 0 errors
+2025-07-09 02:44:18,694 - INFO - Saved 1 records, 64 failed
+2025-07-09 02:44:18,697 - INFO - 127.0.0.1 - - [09/Jul/2025 02:44:18] "POST /process_attendance HTTP/1.1" 200 -
+2025-07-09 03:08:50,324 - INFO - Reading Excel file: C:\xampp\htdocs\Examination-Application-Processing-System\uploads\attendance\1752008930_attendance_sheet.xlsx
+2025-07-09 03:08:50,355 - INFO - Excel file loaded with 65 rows and 33 columns
+2025-07-09 03:08:50,355 - INFO - Columns found: ['Student ID', 'Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30', 'Total Classes', 'Attended Classes']
+2025-07-09 03:08:50,364 - INFO - Mapped 'Student ID' to 'registration_no' with confidence 1.00
+2025-07-09 03:08:50,367 - INFO - Mapped 'Student ID' to 'student_name' with confidence 0.82
+2025-07-09 03:08:50,371 - INFO - Mapped 'Total Classes' to 'total_classes' with confidence 1.00
+2025-07-09 03:08:50,376 - INFO - Mapped 'Attended Classes' to 'attended_classes' with confidence 1.00
+2025-07-09 03:08:50,376 - INFO - Found 30 class columns: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12', 'Class 13', 'Class 14', 'Class 15', 'Class 16', 'Class 17', 'Class 18', 'Class 19', 'Class 20', 'Class 21', 'Class 22', 'Class 23', 'Class 24', 'Class 25', 'Class 26', 'Class 27', 'Class 28', 'Class 29', 'Class 30']
+2025-07-09 03:08:50,387 - INFO - Processed 65 records with 0 errors
+2025-07-09 03:08:50,440 - INFO - Saved 1 records, 64 failed
+2025-07-09 03:08:50,441 - INFO - 127.0.0.1 - - [09/Jul/2025 03:08:50] "POST /process_attendance HTTP/1.1" 200 -

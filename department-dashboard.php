@@ -17,7 +17,7 @@ $sql = "SELECT a.*, s.*, h.name as hall_name, d.name as department_name
         JOIN student s ON a.registration_no = s.registration_no 
         JOIN hall h ON a.hall_id = h.id
         JOIN department d ON a.department_id = d.id
-        WHERE a.department_approval = 0";
+        WHERE (a.department_approval = 0 && a.department_id='$id')";
 $result = mysqli_query($con, $sql);
 ?>
 
@@ -102,6 +102,9 @@ $result = mysqli_query($con, $sql);
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="department-courses.php">Manage Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="attendance-upload.php">Upload Attendance</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -417,27 +420,57 @@ $result = mysqli_query($con, $sql);
             echo '</tbody>
             </table>
             <div class="card-header text-center">
-            <h3>Selected Courses</h3>
+            <h3>Selected Courses & Attendance</h3>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
                         <th>Course Code</th>
                         <th>Course Name</th>
+                        <th>Attendance Percentage</th>
                     </tr>
                 </thead>
                 <tbody>';
 
-            // Query to fetch the application data
-            $sql = "SELECT courses.course_code, courses.course_title
+            // Query to fetch the application data with attendance
+            $sql = "SELECT courses.course_code, courses.course_title, courses.id as course_id, courses.year, courses.semester
         FROM application_courses
         JOIN courses ON application_courses.course_id = courses.id
         WHERE application_courses.app_id = '$app_id'";
             $result = mysqli_query($con, $sql);
             while ($course = mysqli_fetch_assoc($result)) {
+                // Get attendance data for this course and student
+                $attendance_sql = "SELECT attendance_percentage 
+                                 FROM attendance 
+                                 WHERE student_registration_no = '$reg' 
+                                 AND course_id = '{$course['course_id']}' 
+                                 AND session = '{$student['session']}'
+                                 AND year = '{$course['year']}' 
+                                 AND semester = '{$course['semester']}'";
+                $attendance_result = mysqli_query($con, $attendance_sql);
+                $attendance_data = mysqli_fetch_assoc($attendance_result);
+                
+                $attendance_display = 'Please upload attendance sheet';
+                $attendance_class = 'text-warning';
+                
+                if ($attendance_data && $attendance_data['attendance_percentage'] !== null) {
+                    $percentage = $attendance_data['attendance_percentage'];
+                    $attendance_display = $percentage . '%';
+                    
+                    // Color coding based on attendance percentage
+                    if ($percentage >= 75) {
+                        $attendance_class = 'text-success font-weight-bold';
+                    } elseif ($percentage >= 60) {
+                        $attendance_class = 'text-warning font-weight-bold';
+                    } else {
+                        $attendance_class = 'text-danger font-weight-bold';
+                    }
+                }
+                
                 echo '<tr>
                 <td>' . htmlspecialchars($course['course_code']) . '</td>
                 <td>' . htmlspecialchars($course['course_title']) . '</td>
+                <td class="' . $attendance_class . '">' . $attendance_display . '</td>
             </tr>';
             }
             echo '</tbody>

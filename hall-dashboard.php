@@ -17,7 +17,7 @@ $sql = "SELECT a.*, s.*, h.name as hall_name, d.name as department_name
         JOIN student s ON a.registration_no = s.registration_no 
         JOIN hall h ON a.hall_id = h.id
         JOIN department d ON a.department_id = d.id
-        WHERE (a.hall_approval = 0 && a.department_approval = 1)";
+        WHERE (a.hall_approval = 0 && a.department_approval = 1 && a.hall_id = '$id')";
 $result = mysqli_query($con, $sql);
 ?>
 

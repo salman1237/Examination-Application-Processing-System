@@ -1,0 +1,1 @@
+2025-07-05 13:32:29 - SMTP Debug for 20213654538salman@juniv.edu: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server Additional SMTP info: php_network_getaddresses: getaddrinfo for smtp.gmail.com failed: No such host is known. 

@@ -1,0 +1,2 @@
+2025-07-05 04:19:07 - Email simulated to: 20213654538salman@juniv.edu - Subject: Email Verification - Examination Application System - File: email_logs/simulated_1751681947_8e9a669e76fdf9d44630d9c494662e5d.html
+2025-07-05 13:32:29 - Email simulated to: 20213654538salman@juniv.edu - Subject: Application Status Update - Examination Application System - File: email_logs/simulated_1751715149_d707781b14be49f395f18ab653f6a8b6.html

@@ -23,9 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $course_title = mysqli_real_escape_string($con, $_POST['course_title']);
         $year = mysqli_real_escape_string($con, $_POST['year']);
         $semester = mysqli_real_escape_string($con, $_POST['semester']);
+        $course_type = mysqli_real_escape_string($con, $_POST['course_type']);
         
-        $sql = "INSERT INTO courses (department_id, course_code, course_title, year, semester) 
-                VALUES ('$department_id', '$course_code', '$course_title', '$year', '$semester')";
+        $sql = "INSERT INTO courses (department_id, course_code, course_title, year, semester, course_type) 
+                VALUES ('$department_id', '$course_code', '$course_title', '$year', '$semester', '$course_type')";
         
         if (mysqli_query($con, $sql)) {
             $success_message = "Course added successfully!";
@@ -165,6 +166,14 @@ $courses_result = mysqli_query($con, $sql);
                                             <option value="2nd">2nd</option>
                                         </select>
                                     </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="course_type">Course Type</label>
+                                        <select class="form-control" id="course_type" name="course_type" required>
+                                            <option value="theory">Theory</option>
+                                            <option value="lab">Lab/Viva</option>
+                                            <option value="internship">Internship</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <button type="submit" name="add_course" class="btn btn-primary">Add Course</button>
                             </form>
@@ -204,6 +213,7 @@ $courses_result = mysqli_query($con, $sql);
                                                     <tr>
                                                         <th>Course Code</th>
                                                         <th>Course Title</th>
+                                                        <th>Course Type</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
@@ -214,6 +224,7 @@ $courses_result = mysqli_query($con, $sql);
                                     echo '<tr>
                                             <td>' . htmlspecialchars($course['course_code']) . '</td>
                                             <td>' . htmlspecialchars($course['course_title']) . '</td>
+                                            <td>' . ucfirst(htmlspecialchars($course['course_type'])) . '</td>
                                             <td>
                                                 <form method="post" action="" class="d-inline" onsubmit="return confirm(\'Are you sure you want to delete this course?\')">
                                                     <input type="hidden" name="course_id" value="' . $course['id'] . '">

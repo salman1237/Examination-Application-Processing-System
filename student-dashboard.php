@@ -341,7 +341,7 @@ $student = mysqli_fetch_assoc($result);
                             <?php
                             $fields = [
                                 'student_fee' => 'ছাত্র বেতন',
-                                'hall_rent' => 'হল সীট ভাড়া',
+                                'hall_rent' => 'হল সীট ভাড়া',
                                 'admission_fee' => 'ভর্তি/পুনঃ ভতি ফিস',
                                 'late_admission_fee' => 'বিলম্বে ভর্তি ফিস',
                                 'library_deposit' => 'গ্রন্থাগার/গবেষণা জামানত',
@@ -365,11 +365,19 @@ $student = mysqli_fetch_assoc($result);
 
                             // Loop through the fields and add them to the form
                             foreach ($fields as $field => $label) {
-                                echo '
-                            <div class="form-group col-md-6">
-                                <label for="' . $field . '">' . $label . '</label>
-                                <input type="number" class="form-control" id="' . $field . '" name="' . $field . '" value="0" required>
-                            </div>';
+                                if ($field === 'exam_fee') {
+                                    echo '
+                                    <div class="form-group col-md-6">
+                                        <label for="' . $field . '">' . $label . ' <small class="text-muted">(Automatically calculated based on selected courses)</small></label>
+                                        <input type="number" class="form-control" id="' . $field . '" name="' . $field . '" value="0" readonly>
+                                    </div>';
+                                } else {
+                                    echo '
+                                    <div class="form-group col-md-6">
+                                        <label for="' . $field . '">' . $label . '</label>
+                                        <input type="number" class="form-control" id="' . $field . '" name="' . $field . '" value="0" required>
+                                    </div>';
+                                }
                             }
                             ?>
                         </div>

@@ -1,0 +1,2 @@
+2025-07-05 04:19:07 - Failed to: 20213654538salman@juniv.edu - Subject: Email Verification - Examination Application System - Error: SMTP Error: Could not authenticate.
+2025-07-05 13:32:29 - Failed to: 20213654538salman@juniv.edu - Subject: Application Status Update - Examination Application System - Error: SMTP Error: Could not connect to SMTP host. Failed to connect to server SMTP server error: Failed to connect to server Additional SMTP info: php_network_getaddresses: getaddrinfo for smtp.gmail.com failed: No such host is known. 
