@@ -286,7 +286,7 @@ $courses_result = mysqli_query($con, $courses_sql);
                                         </select>
                                     </div>
                                     <div class="form-group col-md-5">
-                                        <label for="course_id">Course <i class="fas fa-sync-alt refresh-icon" id="refresh-courses" title="Refresh course list"></i></label>
+                                        <label for="course_id">Course </label>
                                         <select class="form-control" id="course_id" name="course_id" required>
                                             <option value="">Select Course</option>
                                         </select>
@@ -440,15 +440,6 @@ $courses_result = mysqli_query($con, $courses_sql);
         
         $('#year, #semester').change(function() {
             loadCourses();
-        });
-        
-        // Refresh courses when refresh icon is clicked
-        $('#refresh-courses').click(function() {
-            $(this).addClass('fa-spin');
-            loadCourses();
-            setTimeout(function() {
-                $('#refresh-courses').removeClass('fa-spin');
-            }, 1000);
         });
     </script>
 </body>
