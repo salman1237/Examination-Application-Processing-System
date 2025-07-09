@@ -70,11 +70,11 @@ def intelligent_column_mapping(df):
     """Intelligently map Excel columns to required fields using AI-like logic"""
     columns = df.columns.tolist()
     mapping = {}
-    
+
     # Define possible column names for each field
     field_patterns = {
         'registration_no': [
-            'id', 'student_id', 'roll', 'roll_no', 'class_roll', 'student_roll',
+            'id', 'student_id', 'roll', 'roll_no', 'class_roll', 'ID No.', 'student_roll',
             'registration', 'reg', 'registration_no', 'registration_number'
         ],
         'student_name': [
@@ -82,40 +82,54 @@ def intelligent_column_mapping(df):
         ],
         'total_classes': [
             'total', 'total_classes', 'total_class', 'total_lectures', 
-            'total_sessions', 'classes_held', 'total_periods'
+            'total_sessions', 'classes_held', 'total_periods','total_classes_held',
         ],
         'attended_classes': [
             'attended', 'attended_classes', 'present', 'attendance', 
-            'classes_attended', 'present_classes', 'attended_periods'
+            'classes_attended', 'present_classes', 'attended_periods','Total_Present'
         ]
     }
-    
-    # Find best matching columns
+
+    # Find best matching columns for registration_no and student_name
     for field, patterns in field_patterns.items():
         best_match = None
         best_score = 0
-        
         for col in columns:
-            col_clean = col.lower().strip().replace(' ', '_').replace('-', '_')
+            col_clean = str(col).strip().replace(' ', '_').replace('-', '_')
+            
+            # Only process string columns, skip datetime columns
+            if isinstance(df[col].iloc[0], str):
+                col_clean = col_clean.lower()
             
             for pattern in patterns:
                 score = similarity(col_clean, pattern)
                 if score > best_score and score > 0.6:  # Threshold for similarity
                     best_score = score
                     best_match = col
-        
         if best_match:
             mapping[field] = best_match
             logger.info(f"Mapped '{best_match}' to '{field}' with confidence {best_score:.2f}")
-    
-    # Detect class columns (Class1, Class2, etc.)
+
+    # Detect date columns (attendance data columns, e.g., 2024-10-23, 2024-10-30, etc.)
+    date_columns = [col for col in columns if isinstance(col, str) and re.match(r'\d{4}-\d{2}-\d{2}', col)]
+    if date_columns:
+        mapping['attendance_dates'] = sorted(date_columns)
+        logger.info(f"Found {len(date_columns)} date columns: {mapping['attendance_dates']}")
+
+    # Detect 'Total Class Held' and 'Total Present' columns
+    if 'Total Class Held' in columns:
+        mapping['total_classes'] = 'Total Class Held'
+    if 'Total Present' in columns:
+        mapping['attended_classes'] = 'Total Present'
+
+    # Detect class columns (Class1, Class2, etc.) if any (for older or alternative files)
     class_columns = []
     for col in columns:
-        if re.match(r'^class\s*\d+$', col.lower().strip()):
+        if re.match(r'^class\s*\d+$', str(col).lower().strip()):
             class_columns.append(col)
-    
+
     if class_columns:
-        mapping['class_columns'] = sorted(class_columns, key=lambda x: int(re.search(r'\d+', x).group()))
+        mapping['class_columns'] = sorted(class_columns, key=lambda x: int(re.search(r'\d+', str(x)).group()))
         logger.info(f"Found {len(class_columns)} class columns: {mapping['class_columns']}")
     
     return mapping
@@ -125,47 +139,47 @@ def process_attendance_data(file_path, department_id, session, year, semester, c
     try:
         # Read Excel file
         logger.info(f"Reading Excel file: {file_path}")
-        
+
         # Try different sheet names and engines
         df = None
         try:
             df = pd.read_excel(file_path, engine='openpyxl')
-        except:
+        except Exception as e:
             try:
                 df = pd.read_excel(file_path, engine='xlrd')
             except Exception as e:
                 logger.error(f"Failed to read Excel file: {e}")
                 return None, f"Failed to read Excel file: {e}"
-        
+
         if df is None or df.empty:
             return None, "Excel file is empty or could not be read"
-        
+
         logger.info(f"Excel file loaded with {len(df)} rows and {len(df.columns)} columns")
         logger.info(f"Columns found: {df.columns.tolist()}")
-        
+
         # Intelligent column mapping
         column_mapping = intelligent_column_mapping(df)
-        
+
         # Check if we have required columns
         required_fields = ['registration_no']
         missing_fields = [field for field in required_fields if field not in column_mapping]
-        
+
         if missing_fields:
             return None, f"Could not identify columns for: {', '.join(missing_fields)}. Please check your Excel format."
-        
+
         # Extract and process data
         processed_data = []
         errors = []
-        
+
         for index, row in df.iterrows():
             try:
                 # Extract data using mapped columns
                 reg_no = clean_registration_no(row[column_mapping['registration_no']])
-                
+
                 # Skip rows with missing registration number
                 if not reg_no:
                     continue
-                
+
                 # Check if we have class columns or total/attended columns
                 if 'class_columns' in column_mapping and len(column_mapping['class_columns']) > 0:
                     # Process individual class attendance
@@ -178,11 +192,11 @@ def process_attendance_data(file_path, department_id, session, year, semester, c
                             class_attendance.append(attendance)
                         except (ValueError, TypeError):
                             class_attendance.append(0)
-                    
+
                     # Calculate total and attended classes
                     total_classes = len(class_attendance)
                     attended_classes = sum(class_attendance)
-                    
+
                 elif 'total_classes' in column_mapping and 'attended_classes' in column_mapping:
                     # Use provided total and attended values
                     try:
@@ -194,38 +208,40 @@ def process_attendance_data(file_path, department_id, session, year, semester, c
                 else:
                     errors.append(f"Row {index + 1}: Could not find class attendance data")
                     continue
-                
+
                 # Validate data
                 if total_classes < 0 or attended_classes < 0:
                     errors.append(f"Row {index + 1}: Negative values not allowed")
                     continue
-                
+
                 if attended_classes > total_classes:
                     errors.append(f"Row {index + 1}: Attended classes cannot exceed total classes")
                     continue
-                
+
                 # Calculate attendance percentage
                 attendance_percentage = (attended_classes / total_classes * 100) if total_classes > 0 else 0
-                
+
                 processed_data.append({
                     'registration_no': reg_no,
                     'total_classes': int(total_classes),
                     'attended_classes': int(attended_classes),
                     'attendance_percentage': round(attendance_percentage, 2)
                 })
-                
+
             except Exception as e:
                 errors.append(f"Row {index + 1}: {str(e)}")
                 continue
-        
+
         logger.info(f"Processed {len(processed_data)} records with {len(errors)} errors")
-        
+
         return processed_data, errors
-        
+
     except Exception as e:
         logger.error(f"Error processing attendance data: {e}")
         return None, f"Error processing file: {str(e)}"
 
+# The rest of the API, save to DB, and endpoint handling code remains the same...
+# Save attendance data to database
 def save_attendance_to_db(data, department_id, session, year, semester, course_id, log_id):
     """Save processed attendance data to database"""
     connection = get_db_connection()
